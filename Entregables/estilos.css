@@ -1,5 +1,5 @@
 body{
-    background-image: url("/Front_Design/Images/fondoDegradado.jpg");
+    background-image: url("../Front_Design/Images/fondoDegradado.jpg");
     background-size: cover;
     padding: 6%;
 }
@@ -10,7 +10,7 @@ body{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
