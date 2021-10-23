@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 217a1936a66b3cd8571b95fd2d128421a727ac03
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 

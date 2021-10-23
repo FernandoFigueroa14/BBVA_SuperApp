@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 
@@ -10,44 +11,22 @@ const SaludFinanciera = () => {
    <Text>Hola</Text>
     
   )
+=======
+
+  
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+
+const SaludFinanciera = () => {
+    return (
+        <View>
+            <Text>Hola Mundo Soy Salud financiera</Text>
+            
+        </View>
+    )
+>>>>>>> 217a1936a66b3cd8571b95fd2d128421a727ac03
 }
 
-export default SaludFinanciera
+export default SaludFinanciera;
 
-const styles = StyleSheet.create({
- 
-    MainContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor:'white'
-    },
-   
-    text: {
-      fontSize: 24,
-      textAlign: 'center',
-      fontWeight: 'bold'
-    },
-   
-    row: {
-      paddingVertical: 17,
-      flexDirection: 'row',
-      width: 330,
-      justifyContent: 'space-between',
-    },
-   
-    gauge: {
-      position: 'absolute',
-      width: 100,
-      height: 160,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    
-    gaugeText: {
-      backgroundColor: 'transparent',
-      color: '#000',
-      fontSize: 24,
-    },
-   
-  });
+const styles = StyleSheet.create({})
