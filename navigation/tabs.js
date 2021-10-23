@@ -1,8 +1,5 @@
 import React from 'react';
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
@@ -48,7 +45,7 @@ const Tabs = () => {
         }
        
         >
-            <Tab.Screen name="Home" component={Home} options={{
+            <Tab.Screen name="Home" component={Login} options={{
                 headerShown: false,
                 tabBarIcon: ({focused}) =>(
                     <View style={styles.containertab}>
