@@ -2,24 +2,16 @@ import React from "react";
 import {StyleSheet, Text, View, SafeAreaView ,Image,ImageBackground,StatusBar, ScrollView, TouchableHighlight, Button} from "react-native";
 
 
-const Login = () => {
-
-    const nombre = "Saul"
+const LoginContainer = () => {
 
     return (
         <View>
-            <ImageBackground source={require("../Front_Design/Images/login.jpg")} style={styles.imagenBack}>
-                <View style={styles.header}>
-                    <Image source={require("../Front_Design/Logos_BBVA/superApp_1.png") } style={styles.imagen} ></Image>
-                    <Text style={styles.text}>Hola, <Text style={styles.nombre}>{nombre}</Text></Text>
-                    <Text style={styles.textAbove}>Ingresa tu contraseña para continuar</Text>
-                </View>
-            </ImageBackground>
+            
         </View>
     )
 }
 
-export default Login;
+export default LoginContainer;
 
 const styles = StyleSheet.create({
     container: {

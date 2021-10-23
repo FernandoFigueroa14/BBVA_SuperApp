@@ -1,17 +1,37 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './navigation/tabs';
 import Navigation from './navigation/navigation';
+import Login from './screens/Login'
 
 
-const App = ({navigation, route}) => {
+const App = () => {
   return(
-    <NavigationContainer>
-    <Navigation/>
-    </NavigationContainer>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Login/>
+      </ScrollView>
+      <NavigationContainer>
+        <Navigation/>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    marginHorizontal: 0,
+  },
+  text: {
+    fontSize: 42,
+  },
+});
 
 export default App;
 
