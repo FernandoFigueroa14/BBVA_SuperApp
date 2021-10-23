@@ -1,3 +1,8 @@
+import React from 'react';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 217a1936a66b3cd8571b95fd2d128421a727ac03
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
@@ -21,49 +26,122 @@ const Tab = createBottomTabNavigator();
 const Tabs = () => {
     return(
         <Tab.Navigator
-        tabBarOptions={{
-            showLabel: false,
-            style:{
+        screenOptions={{
+            tabBarShowLabel:false,
+            tabBarStyle: {
                 position: 'absolute',
+                
                 bottom: 25,
                 left: 20,
                 right: 20,
-                elevation: 0,
-                backgroundColor: '#ffffff',
+                elevation: 20,
+                backgroundColor: "#ffffff",
                 borderRadius: 15,
-                height:90,
+                height:60,
+                
+
                 ... styles.shadow
+                
             }
-        }}
+        }
+
+        }
+       
         >
             <Tab.Screen name="Home" component={Home} options={{
+                headerShown: false,
                 tabBarIcon: ({focused}) =>(
-                    <View>
-                        <Image source={require('../Front_Design/Icons/home(1).png')}
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/home(1).png')} 
+                        style={{width:25,
+                            height:25,
+                             tintColor: focused ? "#1464a5" : "#072146"}}
                         />
-                        <Text>HOME</Text>
+                        
                     </View>
                 ),
             }} />
-            <Tab.Screen name="SaludFinanciera" component={SaludFinanciera} />
-            <Tab.Screen name="Fastpay" component={Fastpay} />
-            <Tab.Screen name="Inversiones" component={Inversiones} />
-            <Tab.Screen name="PagoServicios" component={PagoServicios} />
+            <Tab.Screen name="SaludFinanciera" component={SaludFinanciera} options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/heart-attack.png')} 
+                        style={{width:25,
+                                height:25,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }} />
+            <Tab.Screen name="Fastpay" component={Fastpay}  options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/heart-attack.png')} 
+                        style={{width:55,
+                                height:55,
+                                marginBottom: 40,
+                                backgroundColor:"white",
+                                borderRadius:50,
+                                padding: 10,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}
+            
+            />
+            <Tab.Screen name="Inversiones" component={Inversiones} 
+            options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/wallet-filled-money-tool.png')} 
+                        style={{width:25,
+                                height:25,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}
+            />
+            <Tab.Screen name="PagoServicios" component={PagoServicios} 
+             options={{
+                 headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/plus(1).png')} 
+                        style={{width:25,
+                                height:25,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}/>
         </Tab.Navigator>
     );
 }
 
 const styles = StyleSheet.create({
     shadow: {
-        shadowColor: '#7F5Df0',
+        
+        shadowColor: '#072146',
         shadowOffset:{
             width: 0,
             height: 10,
         },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.5,
-        elevation: 5
+        shadowOpacity: 0.05,
+        shadowRadius: 2.5,
+        elevation: 2.5
+    },
+   
+    containertab: {
+        flex: 1,
+        alignItems:"center",
+        justifyContent: "center"
     }
+
 });
 
 export default Tabs;
