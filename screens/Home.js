@@ -1,34 +1,41 @@
-import React from 'react'
-import { StyleSheet, Text, View ,Button,TouchableOpacity,Image,ScrollView} from 'react-native'
-
+import React from 'react';
+import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar ,View,TouchableOpacity,Image} from 'react-native';
 
 const Home = ({navigation}) => {
-    return (
-        <View style={{position: "relative"}}> 
-            
-            <View style={styles.tabProfileStyle}>
+  return (
+    <SafeAreaView style={styles.container}>
 
-                <View style={styles.columns}>
-                <Text>Bienvenido a la superApp</Text>
-                <Text>Supper App lista para Carlos</Text>
-                </View>
+       
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.mrContainer}>
+         <View style = {styles.redbox} />
+         <View style = {styles.greenbox} />
+         <View style = {styles.corolbox} />
+         <View style = {styles.purplebox} />
+         
+         </View>
+      </ScrollView>
+      <View style={styles.tabProfileStyle}>
 
-            <View >
-            <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
-              <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:85,
-                            height:85}}/>
-            </TouchableOpacity>
-            </View>
+        <View style={styles.columns}>
+        <Text style={{color:"#999999"}}>Bienvenido a la superApp</Text>
+        <Text style ={{color:"#072146", fontSize: 18}}>Supper App lista para <Text style={{fontWeight:"bold", fontSize:20}}>Carlos</Text></Text>
+        </View>
 
-            </View>
-            
+        <View >
+        <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
+        <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:100,
+                    height:100,
+                    marginRight:-18
+                    }}/>
+        </TouchableOpacity>
+        </View>
 
-             
-            <View style={styles.tabBarStyle}>
+        </View>
 
-            <View style={styles.rows}> 
-
-            <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
+      <View style={styles.tabBarStyle}>
+      <View style={styles.rows}>
+      <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
               <Image source={require('../Front_Design/Icons/home(1).png')} style={{width:25,
                             height:25}}/>
             </TouchableOpacity>
@@ -40,8 +47,8 @@ const Home = ({navigation}) => {
 
             <View style={styles.containerfast}>
             <TouchableOpacity onPress={()=> navigation.navigate("FastPay")}>
-              <Image source={require('../Front_Design/Icons/fastpay.png')} style={{width:55,
-                            height:55}}/>
+              <Image source={require('../Front_Design/Icons/fastpay.png')} style={{width:65,
+                            height:65}}/>
             </TouchableOpacity>
             </View>
 
@@ -53,74 +60,105 @@ const Home = ({navigation}) => {
               <Image source={require('../Front_Design/Icons/plus(1).png')} style={{width:25,
                             height:25}}/>
             </TouchableOpacity>
-            
+            </View>
             </View>
             
-            
-        </View>
-
-        </View>
-    )
+    </SafeAreaView>
+  );
 }
 
-export default Home;
-
 const styles = StyleSheet.create({
-    
-    tabBarStyle: {
-        position: "absolute",
-        bottom: -610,
-        left: 20,
-        right: 20,
-        elevation: 20,
-        backgroundColor: "white",
-        borderRadius: 15,
-        height:60,
-        
-    
-    },
-
-    tabProfileStyle:{
-        flex: 1,
-        flexDirection:"row",
-        justifyContent:"space-around",
-        alignItems: "center",
-        position: 'absolute',
-        top: 50,
-        left: 20,
-        right: 20,
-        elevation: 20,
-        
-        borderRadius: 15,
-        height:60,
-        shadowColor: '#072146',
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+    backgroundColor: "rgba(213,236,252,0.25)"
+  },
+  columns:{
+    flex: 1,
+    flexDirection:"column",
+    justifyContent:"space-around"
+},
+  tabBarStyle: {
+    position: "absolute",
+    bottom: 20,
+    left: 20,
+    right: 20,
+    elevation: 20,
+    backgroundColor: "white",
+    borderRadius: 15,
+    height:60,
+    shadowColor: '#072146',
         shadowOffset:{
             width: 0,
             height: 10,
         },
-        shadowOpacity: 0,
-        shadowRadius: 0,
-        elevation: 2.5
-    },
+        shadowOpacity: 0.10,
+        shadowRadius: 2.5,
     
-    columns:{
-        flex: 1,
-        flexDirection:"column",
-        justifyContent:"space-around"
-    },
 
-    rows:{
-        flex: 1,
-        flexDirection:"row",
-        alignItems: "center",
-        justifyContent: "space-around"
-    },
-    containerfast:{
-        height: 70,
-        backgroundColor: "white",
-        padding: 4,
-        borderRadius:50,
-        marginBottom:40
-        
-    }
-})
+},
+
+tabProfileStyle:{
+    flex: 1,
+    flexDirection:"row",
+    justifyContent:"space-between",
+    alignItems: "center",
+    backgroundColor:"rgba(213,236,252,0)",
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    right: 20,
+    
+    
+    borderRadius: 15,
+    height:60,
+},
+rows:{
+    flex: 1,
+    flexDirection:"row",
+    alignItems: "center",
+    justifyContent: "space-around"
+}, containerfast:{
+    height: 70,
+    backgroundColor: "white",
+    padding: 4,
+    borderRadius:50,
+    marginBottom:40
+    
+},
+  mrContainer: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 130
+ },
+  scrollView: {
+    backgroundColor: 'rgba(213,236,252,0.25)',
+    marginHorizontal: 10,
+  },
+  text: {
+    fontSize: 42,
+  },
+  redbox: {
+    width: 800,
+    height: 300,
+    backgroundColor: 'red'
+ },
+ corolbox: {
+    width: 100,
+    height: 100,
+    backgroundColor: '#ff7f50'
+ },
+ greenbox: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'green'
+ },
+ purplebox: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'purple'
+ }
+});
+
+export default Home;

@@ -103,11 +103,12 @@ tabProfileStyle:{
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems: "center",
+    backgroundColor:"rgba(213,236,252,0)",
     position: 'absolute',
     top: 50,
     left: 20,
     right: 20,
-    elevation: 20,
+    
     
     borderRadius: 15,
     height:60,
