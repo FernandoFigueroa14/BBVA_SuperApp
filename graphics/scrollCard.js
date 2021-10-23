@@ -15,7 +15,7 @@ const data = [
   {
     id: '123',
     title: 'Get a ride',
-    image: 'https://links.papareact.com/3pn',
+    uri:'../Front_Design/Tarjetas/Back_azul_logo.png',
     screen: 'MapScreen',
   },
   {
