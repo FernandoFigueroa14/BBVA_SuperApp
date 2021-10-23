@@ -1,15 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-const view_login = () => {
+const Login = () => {
     return (
         <View>
-            <Text>Hola Mundo</Text>
-            <Text></Text>
+            <Text>Hola Mundo Soy Login</Text>
+            
         </View>
     )
 }
 
-export default view_login
+export default Login;
 
 const styles = StyleSheet.create({})
