@@ -6,11 +6,13 @@ const Home = ({navigation}) => {
     return (
         <View>
             <View style={styles.tabProfileStyle}>
+
                 <View style={styles.columns}>
                 <Text>Bienvenido a la superApp</Text>
                 <Text>Supper App lista para Carlos</Text>
                 </View>
-            <View style={styles.columns}>
+
+            <View >
             <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
               <Image source={require('../Front_Design/Icons/home(1).png')} style={{width:25,
                             height:25}}/>
@@ -79,6 +81,10 @@ const styles = StyleSheet.create({
     
     },
     tabProfileStyle:{
+        flex: 1,
+        flexDirection:"row",
+        justifyContent:"space-around",
+        alignItems: "center",
         position: 'absolute',
         top: 50,
         left: 20,
