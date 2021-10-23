@@ -4,7 +4,8 @@ import { StyleSheet, Text, View ,Button,TouchableOpacity,Image,ScrollView} from 
 
 const Home = ({navigation}) => {
     return (
-        <View>
+        <View style={{position: "relative"}}> 
+            
             <View style={styles.tabProfileStyle}>
 
                 <View style={styles.columns}>
@@ -14,15 +15,17 @@ const Home = ({navigation}) => {
 
             <View >
             <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
-              <Image source={require('../Front_Design/Icons/home(1).png')} style={{width:25,
-                            height:25}}/>
+              <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:85,
+                            height:85}}/>
             </TouchableOpacity>
             </View>
 
             </View>
             
 
-             <View style={styles.tabBarStyle}>
+             
+            <View style={styles.tabBarStyle}>
+
             <View style={styles.rows}> 
 
             <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
@@ -34,6 +37,7 @@ const Home = ({navigation}) => {
               <Image source={require('../Front_Design/Icons/heart-attack.png')} style={{width:25,
                             height:25}}/>
             </TouchableOpacity>
+
             <View style={styles.containerfast}>
             <TouchableOpacity onPress={()=> navigation.navigate("FastPay")}>
               <Image source={require('../Front_Design/Icons/fastpay.png')} style={{width:55,
@@ -49,6 +53,7 @@ const Home = ({navigation}) => {
               <Image source={require('../Front_Design/Icons/plus(1).png')} style={{width:25,
                             height:25}}/>
             </TouchableOpacity>
+            
             </View>
             
             
@@ -61,25 +66,20 @@ const Home = ({navigation}) => {
 export default Home;
 
 const styles = StyleSheet.create({
+    
     tabBarStyle: {
-        position: 'absolute',
-        top: 570,
+        position: "absolute",
+        bottom: -610,
         left: 20,
         right: 20,
         elevation: 20,
         backgroundColor: "white",
         borderRadius: 15,
         height:60,
-        shadowColor: '#072146',
-        shadowOffset:{
-            width: 0,
-            height: 10,
-        },
-        shadowOpacity: 0.05,
-        shadowRadius: 2.5,
-        elevation: 2.5
+        
     
     },
+
     tabProfileStyle:{
         flex: 1,
         flexDirection:"row",
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         left: 20,
         right: 20,
         elevation: 20,
-        backgroundColor: "white",
+        
         borderRadius: 15,
         height:60,
         shadowColor: '#072146',
@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 10,
         },
-        shadowOpacity: 0.05,
-        shadowRadius: 2.5,
+        shadowOpacity: 0,
+        shadowRadius: 0,
         elevation: 2.5
     },
     
