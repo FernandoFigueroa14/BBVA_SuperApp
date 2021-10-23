@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
@@ -23,13 +25,15 @@ const Tabs = () => {
         <Tab.Navigator
         tabBarOptions={{
             showLabel: false,
+
             style:{
                 position: 'absolute',
+                
                 bottom: 25,
                 left: 20,
                 right: 20,
-                elevation: 0,
-                backgroundColor: '#ffffff',
+                elevation: 20,
+                backgroundColor: "black",
                 borderRadius: 15,
                 height:90,
                 ... styles.shadow
@@ -37,24 +41,79 @@ const Tabs = () => {
         }}
         >
             <Tab.Screen name="Home" component={Home} options={{
+                headerShown: false,
                 tabBarIcon: ({focused}) =>(
-                    <View>
-                        <Image source={require('../Front_Design/Icons/home(1).png')}
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/home(1).png')} 
+                        style={{width:35,
+                            height:35,
+                             tintColor: focused ? "#1464a5" : "#072146"}}
                         />
-                        <Text>HOME</Text>
+                        
                     </View>
                 ),
             }} />
-            <Tab.Screen name="SaludFinanciera" component={SaludFinanciera} />
-            <Tab.Screen name="Fastpay" component={Fastpay} />
-            <Tab.Screen name="Inversiones" component={Inversiones} />
-            <Tab.Screen name="PagoServicios" component={PagoServicios} />
+            <Tab.Screen name="SaludFinanciera" component={SaludFinanciera} options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/heart-attack.png')} 
+                        style={{width:35,
+                                height:35,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }} />
+            <Tab.Screen name="Fastpay" component={Fastpay}  options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/heart-attack.png')} 
+                        style={{width:55,
+                                height:55,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}
+            
+            />
+            <Tab.Screen name="Inversiones" component={Inversiones} 
+            options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/wallet-filled-money-tool.png')} 
+                        style={{width:35,
+                                height:35,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}
+            />
+            <Tab.Screen name="PagoServicios" component={PagoServicios} 
+             options={{
+                headerShown: false,
+                tabBarIcon: ({focused})=>(
+                    <View style={styles.containertab}>
+                        <Image source={require('../Front_Design/Icons/plus(1).png')} 
+                        style={{width:35,
+                                height:35,
+                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+
+                    </View>
+                ),
+            }}/>
         </Tab.Navigator>
     );
 }
 
 const styles = StyleSheet.create({
     shadow: {
+        
         shadowColor: '#7F5Df0',
         shadowOffset:{
             width: 0,
@@ -63,7 +122,14 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5
+    },
+   
+    containertab: {
+        flex: 1,
+        alignItems:"center",
+        justifyContent: "center"
     }
+
 });
 
 export default Tabs;
