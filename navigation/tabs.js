@@ -15,6 +15,8 @@ import PagoServicios from '../screens/PagoServicios';
 import Perfil from '../screens/Perfil';
 import SaludFinanciera from '../screens/SaludFinanciera';
 import ScanQR from '../screens/ScanQR';
+import LoginUser from "../screens/LoginUser";
+import LoginChange from "../screens/LoginChange";
 
 
 const Tab = createBottomTabNavigator();
@@ -116,6 +118,13 @@ const Tabs = () => {
                     </View>
                 ),
             }}/>
+            <Tab.Screen name="LoginUser" component={LoginUser} options={{
+                    headerShown: false
+                }}/>
+                <Tab.Screen name="LoginChange" component={LoginChange} options={{
+                    headerShown: false,
+                    style: {display: "none"}
+                }}/>
         </Tab.Navigator>
     );
 }
