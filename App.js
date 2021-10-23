@@ -1,11 +1,14 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './navigation/tabs';
+import Navigation from './navigation/navigation';
+
 
 const App = () => {
   return(
     <NavigationContainer>
-      <Tabs />
+    <Navigation/>
     </NavigationContainer>
   );
 }
