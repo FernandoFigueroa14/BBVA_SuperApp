@@ -1,8 +1,5 @@
 import React from 'react';
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
@@ -37,7 +34,7 @@ const Tabs = () => {
                 elevation: 20,
                 backgroundColor: "#ffffff",
                 borderRadius: 15,
-                height:90,
+                height:60,
                 
 
                 ... styles.shadow
@@ -53,8 +50,8 @@ const Tabs = () => {
                 tabBarIcon: ({focused}) =>(
                     <View style={styles.containertab}>
                         <Image source={require('../Front_Design/Icons/home(1).png')} 
-                        style={{width:35,
-                            height:35,
+                        style={{width:25,
+                            height:25,
                              tintColor: focused ? "#1464a5" : "#072146"}}
                         />
                         
@@ -67,8 +64,8 @@ const Tabs = () => {
 
                     <View style={styles.containertab}>
                         <Image source={require('../Front_Design/Icons/heart-attack.png')} 
-                        style={{width:35,
-                                height:35,
+                        style={{width:25,
+                                height:25,
                                  tintColor: focused ? "#1464a5" : "#072146"}}/>
 
                     </View>
@@ -81,6 +78,10 @@ const Tabs = () => {
                         <Image source={require('../Front_Design/Icons/heart-attack.png')} 
                         style={{width:55,
                                 height:55,
+                                marginBottom: 40,
+                                backgroundColor:"white",
+                                borderRadius:50,
+                                padding: 10,
                                  tintColor: focused ? "#1464a5" : "#072146"}}/>
 
                     </View>
@@ -94,8 +95,8 @@ const Tabs = () => {
                 tabBarIcon: ({focused})=>(
                     <View style={styles.containertab}>
                         <Image source={require('../Front_Design/Icons/wallet-filled-money-tool.png')} 
-                        style={{width:35,
-                                height:35,
+                        style={{width:25,
+                                height:25,
                                  tintColor: focused ? "#1464a5" : "#072146"}}/>
 
                     </View>
@@ -108,8 +109,8 @@ const Tabs = () => {
                 tabBarIcon: ({focused})=>(
                     <View style={styles.containertab}>
                         <Image source={require('../Front_Design/Icons/plus(1).png')} 
-                        style={{width:35,
-                                height:35,
+                        style={{width:25,
+                                height:25,
                                  tintColor: focused ? "#1464a5" : "#072146"}}/>
 
                     </View>
@@ -127,8 +128,8 @@ const styles = StyleSheet.create({
             width: 0,
             height: 10,
         },
-        shadowOpacity: 1,
-        shadowRadius: 3.5,
+        shadowOpacity: 0.05,
+        shadowRadius: 2.5,
         elevation: 2.5
     },
    

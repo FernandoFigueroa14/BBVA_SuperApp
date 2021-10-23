@@ -1,26 +1,13 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
 
-import Pie from 'react-native-pie';
+//import Pie from 'react-native-pie';
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 const SaludFinanciera = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-        <View style={styles.row}>
-      <Pie
-            radius={80}
-            sections={[
-              { percentage: 10, color: '#C70039' },
-              { percentage: 20, color: '#44CD40' },
-              { percentage: 30, color: '#404FCD' },
-              { percentage: 40, color: '#EBD22F' }]}
-            strokeCap={'butt'}
-            innerRadius={60}
-          />
-    </View>
-    </SafeAreaView>
+   <Text>Hola</Text>
     
   )
 }
