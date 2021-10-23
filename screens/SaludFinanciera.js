@@ -1,15 +1,26 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
+
+import PieChartWithDynamicSlices from '../graphics/pieChart'
 
 const SaludFinanciera = () => {
-    return (
-        <View>
-            <Text>Hola Mundo Soy Salud financiera</Text>
-            
-        </View>
-    )
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text>Hola Mundo Soy Salud financiera</Text>
+        <PieChartWithDynamicSlices />
+      </View>
+    </SafeAreaView>
+  )
 }
 
-export default SaludFinanciera;
+export default SaludFinanciera
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //backgroundColor: '#004481',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})
