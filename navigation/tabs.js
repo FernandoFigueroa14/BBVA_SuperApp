@@ -1,5 +1,8 @@
 import React from 'react';
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
