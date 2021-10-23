@@ -1,32 +1,15 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './navigation/tabs';
-import LoginNavigation from './navigation/LoginNavigation';
-import Login from './screens/Login';
-import LoginN from './navigation/LoginN';
-import { ScrollView, View, Button } from 'react-native';
+import Navigation from './navigation/navigation';
+
 
 const App = ({navigation, route}) => {
   return(
-    <ScrollView>
-      <NavigationContainer>
-        <LoginN/>
-      </NavigationContainer>
-      <View>
-        <Login/>
-      </View>
-      <View>
-        <Button title="INICIA SESIÓN" onPress={() =>
-            navigation.navigate('LoginUser')
-          }></Button>
-      </View>
-      <View>
-        <Button title="CAMBIAR USUARIO" onPress={() =>
-            navigation.navigate('LoginChange')
-          }></Button>
-      </View>
-    </ScrollView>
-    
+    <NavigationContainer>
+    <Navigation/>
+    </NavigationContainer>
   );
 }
 

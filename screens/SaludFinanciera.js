@@ -1,21 +1,26 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 
-//import Pie from 'react-native-pie';
-
-//console.disableYellowBox = true;
+import PieChartWithDynamicSlices from '../graphics/pieChart'
 
 const SaludFinanciera = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-        <View style={styles.row}>
-     
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text>Hola Mundo Soy Salud financiera</Text>
+        <PieChartWithDynamicSlices />
+      </View>
     </SafeAreaView>
-    
   )
 }
 
-export default SaludFinanciera;
+export default SaludFinanciera
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //backgroundColor: '#004481',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})

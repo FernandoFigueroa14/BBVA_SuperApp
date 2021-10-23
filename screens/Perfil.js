@@ -1,10 +1,14 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
-const Perfil = () => {
+const Perfil = ({navigation}) => {
     return (
         <View>
             <Text>Hola Mundo Perfil</Text>
+            <Button
+            title="Home"
+            onPress={()=>navigation.navigate("Home")}
+            ></Button>
             
         </View>
     )
