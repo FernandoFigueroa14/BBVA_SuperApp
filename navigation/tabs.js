@@ -73,15 +73,16 @@ const Tabs = () => {
             <Tab.Screen name="Fastpay" component={Fastpay}  options={{
                 headerShown: false,
                 tabBarIcon: ({focused})=>(
-                    <View style={styles.containertab}>
-                        <Image source={require('../Front_Design/Icons/heart-attack.png')} 
-                        style={{width:55,
-                                height:55,
-                                marginBottom: 40,
+                    <View style={styles.containertab,styles.containerfast}>
+                        <Image source={require('../Front_Design/Icons/fastpay.png')} 
+                        style={{
+                                width: 70,
+                                height: 70,
+                                
                                 backgroundColor:"white",
                                 borderRadius:50,
-                                padding: 10,
-                                 tintColor: focused ? "#1464a5" : "#072146"}}/>
+                                
+                        }}/>
 
                     </View>
                 ),
@@ -136,6 +137,14 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems:"center",
         justifyContent: "center"
+    },
+    containerfast:{
+        height: 70,
+        backgroundColor: "white",
+        padding: 4,
+        borderRadius:50,
+        marginBottom:40
+        
     }
 
 });
