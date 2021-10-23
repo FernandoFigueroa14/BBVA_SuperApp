@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 
 const Navigation = () => {
     return(
-        <Stack.Navigator screenOptions={{
+        <Stack.Navigator initialRouteName="Home" screenOptions={{
             headerShown: false
           }}>
             <Stack.Screen name="Perfil" component={Perfil}></Stack.Screen>
