@@ -3,12 +3,13 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './navigation/tabs';
 import Navigation from './navigation/navigation';
+import HomeScreen from './screens/HomeScreen'
 
 
 const App = ({navigation, route}) => {
   return(
     <NavigationContainer>
-    <Navigation/>
+    <HomeScreen/>
     </NavigationContainer>
   );
 }
