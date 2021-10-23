@@ -1,15 +1,13 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-
-//import Pie from 'react-native-pie';
-
-//console.disableYellowBox = true;
+import { StyleSheet, Text, View } from 'react-native'
 
 const SaludFinanciera = () => {
-  return (
-   <Text>Hola</Text>
-    
-  )
+    return (
+        <View>
+            <Text>Hola Mundo Soy Salud financiera</Text>
+            
+        </View>
+    )
 }
 
 export default SaludFinanciera;
