@@ -138,7 +138,7 @@ const Home = ({ navigation }) => {
                 justifyContent: "space-around",
               }}
             >
-              <TouchableOpacity style={{ flex: 1, alignItems: "center" }}>
+              <TouchableOpacity onPress={() => navigation.navigate("MandarDinero")} style={{ flex: 1, alignItems: "center" }}>
                 <Image
                   style={{
                     width: 50,

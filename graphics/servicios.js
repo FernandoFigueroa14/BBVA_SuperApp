@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+
 import {
   StyleSheet,
   Text,
@@ -13,195 +15,172 @@ import {
 
 const deviceWidth = Dimensions.get("window").width;
 
+const keys = ["Netflix", "Spotify", "Xbox Game Pass", "Izzi"];
+const urls = [
+  "https://www.pngall.com/wp-content/uploads/4/Round-Netflix-Logo.png",
+  "https://www.pngrepo.com/png/125477/512/spotify.png",
+  "https://www.freepnglogos.com/uploads/xbox-png-gamepad-16.png",
+  "https://cdn.fing.io/images/isp/MX/logo/izzi_logo.png",
+];
+//let cont = 0;
+
 class Servicios extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedSlice: {
-        icon: "../Front_Design/Icons/Asset_44.png",
-        cuenta: "carlospano@gmail.com",
-        servicio: "Netflix",
-      },
-      labelWidth: 0,
+      iconC: urls[0],
+      iconL: urls[-1],
+      iconR: urls[1],
+      cuenta: "carlospano@gmail.com",
+      servicio: keys[0],
+      cont: 1,
     };
   }
 
-  render() {
-    const { labelWidth, selectedSlice } = this.state;
-    const { icon, cuenta, servicio } = selectedSlice;
-    const keys = ["Netflix", "Educacion", "Salud", "Servicios", "Renta"];
-    const values = [
-      "../Front_Design/Icons/Asset_44.png",
-      "../Front_Design/Icons/Asset_44.png",
-      "../Front_Design/Icons/Asset_44.png",
-      "../Front_Design/Icons/Asset_44.png",
-      "../Front_Design/Icons/Asset_44.png",
-    ];
-    const data = keys.map((key, index) => {
-      return {
-        key,
-        value: values[index],
-        onPress: () =>
-          this.setState({
-            selectedSlice: { servicio: key, icon: values[index] },
-          }),
-      };
+  Load_DataR = () => {
+    this.setState({
+      servicio: keys[this.state.cont],
+      iconC: urls[this.state.cont],
+      iconL: urls[this.state.cont - 1],
+      iconR: urls[this.state.cont + 1],
+      cont: this.state.cont < 3 ? this.state.cont + 1 : 0,
     });
+  };
+
+  Load_DataL = () => {
+    this.setState({
+      servicio: keys[this.state.cont],
+      iconC: urls[this.state.cont],
+      iconL: urls[this.state.cont - 1],
+      iconR: urls[this.state.cont + 1],
+      cont: this.state.cont > 0 ? this.state.cont - 1 : 2,
+    });
+  };
+
+  render() {
+    // const { labelWidth, selectedSlice } = this.state;
+    const { iconS, cuenta, servicio, cont } = this.state;
 
     return (
-      <View>
+      <View
+        style={{
+          flexDirection: "column",
+          justifyContent: "center",
+          flex: 1,
+        }}
+      >
         <View
           style={{
-            flex: 3,
-            backgroundColor: "red",
+            flex: 2,
+            flexDirection: "row",
             alignItems: "center",
-            width: deviceWidth / 4,
+            justifyContent: "center",
           }}
         >
           <Image
-            source={require("../Front_Design/Icons/Asset_44.png")}
-            data={data}
-          ></Image>
+            source={{ uri: this.state.iconL }}
+            style={{
+              width: deviceWidth / 8,
+              height: deviceWidth / 8,
+            }}
+          />
+
+          <Image
+            //data={data}
+            source={{ uri: this.state.iconC }}
+            style={{
+              width: deviceWidth / 4,
+              height: deviceWidth / 4,
+              marginHorizontal: 10,
+            }}
+          />
+
+          <TouchableOpacity onPress={this.Load_DataR}>
+            <Image
+              source={{ uri: this.state.iconR }}
+              style={{
+                width: deviceWidth / 8,
+                height: deviceWidth / 8,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            flex: 1.5,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 13,
+              fontWeight: "700",
+              color: "#072146",
+              marginBottom: -15,
+            }}
+          >
+            Cuenta {`${servicio}: \n`}
+          </Text>
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 25,
+              color: "red",
+              fontWeight: "200",
+              color: "#072146",
+            }}
+          >
+            {`${cuenta}`}
+          </Text>
         </View>
 
         <View
           style={{
             flex: 3,
-            backgroundColor: "blue",
+            alignItems: "center",
+            justifyContent: "center",
           }}
-        ></View>
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 13,
+              fontWeight: "700",
+              color: "#072146",
+              marginBottom: -25,
+            }}
+          >
+            Total a pagar:
+          </Text>
+          <Text
+            style={{
+              textAlign: "center",
+              fontWeight: "700",
+              backgroundColor: "rgba(203, 203, 203, 0.8)",
+              color: "#072146",
+              margin: 30,
+              fontSize: 30,
+              width: deviceWidth - 80,
+              height: 45,
+              borderRadius: 5,
+              paddingTop: 5,
+            }}
+          >
+            $150.00
+          </Text>
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    backgroundColor: "rgba(213,236,252,0.25)",
-  },
-  columns: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-around",
-  },
-  tabBarStyle: {
-    /*
-    position: "absolute",
-    bottom: 20,
-    left: 20,
-    right: 20,
-    elevation: 20,*/
-    margin: 10,
-    backgroundColor: "white",
-    borderRadius: 15,
-    height: 60,
-    shadowColor: "#072146",
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 2.5,
-  },
-  containerProfile: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    zIndex: 10000,
-    position: "relative",
-    height: 100,
-  },
-  tabProfileStyle: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "rgba(213,236,252,1)",
+const styles = StyleSheet.create({});
 
-    position: "absolute",
-    top: 20,
-    left: 10,
-    right: 10,
-
-    borderRadius: 15,
-    height: 80,
-    padding: 15,
-    shadowColor: "#072146",
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 1.5,
-  },
-  rows: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-  },
-  containerfast: {
-    height: 70,
-    backgroundColor: "white",
-    padding: 4,
-    borderRadius: 50,
-    marginBottom: 40,
-  },
-  mrContainer: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 0,
-  },
-  scrollView: {
-    backgroundColor: "rgba(213,236,252,0)",
-    marginHorizontal: 0,
-    paddingHorizontal: 10,
-  },
-  text: {
-    fontSize: 42,
-  },
-  redbox: {
-    height: 250,
-  },
-  nombres: {
-    fontSize: 10,
-    fontWeight: "bold",
-    color: "#072146",
-  },
-  corolbox: {
-    width: deviceWidth - 40,
-    height: (deviceWidth - 40) * 2.3,
-
-    flex: 1,
-
-    alignItems: "center",
-  },
-  greenbox: {
-    paddingTop: 10,
-    paddingBottom: 10,
-    width: 365,
-    height: 200,
-    backgroundColor: "white",
-    borderRadius: 10,
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    shadowColor: "#072146",
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 1.5,
-  },
-  purplebox: {
-    width: 100,
-    height: 100,
-    backgroundColor: "purple",
-  },
-});
+function iconExport(icon) {
+  return icon;
+}
 
 export default Servicios;

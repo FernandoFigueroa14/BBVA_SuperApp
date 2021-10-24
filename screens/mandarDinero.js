@@ -8,14 +8,15 @@ import {
   View,
   TouchableOpacity,
   Image,
+  FlatList,
+  Button,
+  TextInput,
   Dimensions,
 } from "react-native";
 
-import Servicios from "../graphics/servicios";
-
 const deviceWidth = Dimensions.get("window").width;
 
-const PagoServicios = ({ navigation }) => {
+const mandarDinero = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerProfile}>
@@ -23,11 +24,8 @@ const PagoServicios = ({ navigation }) => {
           <View style={styles.columns}>
             <Text style={{ color: "#999999" }}>Bienvenido a la superApp</Text>
             <Text style={{ color: "#072146", fontSize: 18 }}>
-              Pago de tus
-              <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-                {" "}
-                Servicios
-              </Text>
+              Super App lista para{" "}
+              <Text style={{ fontWeight: "bold", fontSize: 20 }}>Carlos</Text>
             </Text>
           </View>
 
@@ -42,101 +40,32 @@ const PagoServicios = ({ navigation }) => {
         </View>
       </View>
 
-      <View
-        style={{
-          flex: 2,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 25,
-            fontWeight: "bold",
-            textAlign: "center",
-            paddingTop: 25,
-            color: "#072146",
-          }}
-        >
-          PAGAR SERVICIOS
-        </Text>
-      </View>
-
-      <View
-        style={{
-          flex: 9,
-          marginTop: 30,
-        }}
-      >
-        <Servicios />
-      </View>
-
-      <View
-        style={{
-          flex: 5,
-          alignItems: "center",
-          marginTop: -60
-        }}
-      >
-        <Text
-          style={{
-            textAlign: "center",
-            fontWeight: "600",
-            backgroundColor: "rgba(20, 100, 165, 1)",
-            color: "white",
-            margin: 30,
-            fontSize: 20,
-            width: deviceWidth - 80,
-            height: 45,
-            borderRadius: 5,
-            paddingTop: 10
-          }}
-        >
-          PAGAR AHORA
-        </Text>
-      </View>
-
-      <View style={styles.tabBarStyle}>
-        <View style={styles.rows}>
-          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-            <Image
-              source={require("../Front_Design/Icons/home(1).png")}
-              style={{ width: 25, height: 25 }}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => navigation.navigate("SaludFinanciera")}
-          >
-            <Image
-              source={require("../Front_Design/Icons/heart-attack.png")}
-              style={{ width: 25, height: 25 }}
-            />
-          </TouchableOpacity>
-
-          <View style={styles.containerfast}>
-            <TouchableOpacity onPress={() => navigation.navigate("FastPayIns")}>
-              <Image
-                source={require("../Front_Design/Icons/fastpay.png")}
-                style={{ width: 65, height: 65 }}
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.mrContainer}>
+        <Image
+                source={require("../Front_Design/Salud/Asset_21.png")}
+                style={{ width: 200, height: 55,marginTop:55,marginBottom:-5}}
               />
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity onPress={() => navigation.navigate("Inversiones")}>
-            <Image
-              source={require("../Front_Design/Icons/wallet-filled-money-tool.png")}
-              style={{ width: 25, height: 25 }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("PagoServicios")}
+          <Text
+            style={{
+              fontWeight: "300",
+              padding:20,
+              fontSize: 19,
+              marginBottom: 10,
+              color: "#072146",
+              alignSelf: "center",
+              textAlign:"center",
+              
+            }}
           >
-            <Image
-              source={require("../Front_Design/Icons/plus(1).png")}
-              style={{ width: 25, height: 25 }}
-            />
-          </TouchableOpacity>
+            Estás a punto de realizar una transferencia a <Text style={{ fontWeight: "bold", fontSize: 22 }}>Dumas</Text>
+          </Text>
+
+          
+
+          
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -249,7 +178,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     width: 365,
-    height: 200,
+    height: 220,
     backgroundColor: "white",
     borderRadius: 10,
     flex: 1,
@@ -270,4 +199,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PagoServicios;
+export default mandarDinero;
