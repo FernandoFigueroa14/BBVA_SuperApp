@@ -4,7 +4,7 @@
     "slug": "superapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/iconBBVA.jpeg",
+    "icon": "",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.netoruk.superapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

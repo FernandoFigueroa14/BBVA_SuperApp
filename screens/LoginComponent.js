@@ -33,9 +33,9 @@ const LoginComponent = ({navigation}) => {
     const [text1, onChangeTextT] = React.useState("");
     const usuario = {
       "id": 1,
-      "nombres": "Saul",
-      "apellidos": "Toral",
-      "correo": "saulToral@hotmail.com",
+      "nombres": "Carlos",
+      "apellidos": "Pano",
+      "correo": "cpano8@hotmail.com",
       "contraseña": "superApp2021",
       "cuenta": 1234567890
     }
