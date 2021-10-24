@@ -18,7 +18,7 @@ class PieChartWithDynamicSlices extends React.PureComponent {
   render() {
     const { labelWidth, selectedSlice } = this.state
     const { icon, label, salud } = selectedSlice
-    const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter']
+    const keys = ['Entretenimiento', 'Educacion', 'Salud', 'Servicios', 'Renta']
     const values = [15, 25, 35, 45, 55]
     const colors = ['#072146', '#1464A5', '#2bcccb', '#ffca2d', '#008484']
     const data = keys.map((key, index) => {
@@ -32,7 +32,7 @@ class PieChartWithDynamicSlices extends React.PureComponent {
         },
         onPress: () =>
           this.setState({
-            selectedSlice: { label: key, value: values[index] },
+            selectedSlice: { label: key, salud: `${values[index]}%` },
           }),
       }
     })
@@ -50,12 +50,14 @@ class PieChartWithDynamicSlices extends React.PureComponent {
         <Image
           source={require('../Front_Design/Icons/Asset_34.png')}
           style={{
+            flex: 1,
             position: 'absolute',
             left: deviceWidth / 2 - 20 / 2,
             alignItems: 'center',
             width: 20,
             height: 20,
-            top: 150
+            justifyContent: 'center',
+            marginBottom: 10
           }}
         />
 
@@ -72,11 +74,25 @@ class PieChartWithDynamicSlices extends React.PureComponent {
             position: 'absolute',
             left: deviceWidth / 2 - labelWidth / 2,
             textAlign: 'center',
-            fontWeight: 'bold',
-            fontSize: 8,
-            paddingTop: 30
+            paddingTop: 30,
           }}>
-          {`${label} \n ${salud}`}
+          <Text
+            style={{
+              fontWeight: 'bold',
+              fontSize: 8,
+              color: '#072146',
+            }}>
+            {`${label}`}
+          </Text>
+          {`\n`}
+          <Text
+            style={{
+              fontWeight: 'bold',
+              fontSize: 10,
+              color: '#f7931e',
+            }}>
+            {`${salud}`}
+          </Text>
         </Text>
       </View>
     )
