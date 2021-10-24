@@ -2,12 +2,13 @@ import React from "react";
 import {StyleSheet, Text, View, SafeAreaView ,Image,ImageBackground,StatusBar, ScrollView, TouchableHighlight, Button} from "react-native";
 
 
-const Login = ({navigation}) => {
+const Login = () => {
 
     const nombre = "Saul"
 
     return (
-        <View>
+        
+        <View style={styles.container}>
             <ImageBackground source={require("../Front_Design/Images/login.jpg")} style={styles.imagenBack}>
                 <View style={styles.header}>
                     <Image source={require("../Front_Design/Logos_BBVA/superApp_1.png") } style={styles.imagen} ></Image>
@@ -23,14 +24,13 @@ export default Login;
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        alignItems:"center",
-        justifyContent: "center"
+        flex: 0.5
     },
     imagenBack:{
       flex:1,
       justifyContent:"center",
-      height: 300
+      height: 300,
+      
     },
    
     header:{

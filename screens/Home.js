@@ -4,7 +4,25 @@ import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar ,View,TouchableOp
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
+        <View style={styles.containerProfile}>
+            <View style={styles.tabProfileStyle}>
 
+                <View style={styles.columns}>
+                    <Text style={{color:"#999999"}}>Bienvenido a la superApp</Text>
+                    <Text style ={{color:"#072146", fontSize: 18}}>Supper App lista para <Text style={{fontWeight:"bold", fontSize:20}}>Carlos</Text></Text>
+                </View>
+
+                <View >
+                    <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
+                        <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:100,
+                                    height:100,
+                                    marginRight:-18
+                                    }}/>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
+        </View>
        
       <ScrollView style={styles.scrollView}>
         <View style={styles.mrContainer}>
@@ -221,24 +239,6 @@ const Home = ({navigation}) => {
          </View>
       </ScrollView>
 
-      <View style={styles.tabProfileStyle}>
-
-        <View style={styles.columns}>
-        <Text style={{color:"#999999"}}>Bienvenido a la superApp</Text>
-        <Text style ={{color:"#072146", fontSize: 18}}>Supper App lista para <Text style={{fontWeight:"bold", fontSize:20}}>Carlos</Text></Text>
-        </View>
-
-        <View >
-        <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
-        <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:100,
-                    height:100,
-                    marginRight:-18
-                    }}/>
-        </TouchableOpacity>
-        </View>
-
-        </View>
-
       <View style={styles.tabBarStyle}>
       <View style={styles.rows}>
       <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
@@ -285,11 +285,13 @@ const styles = StyleSheet.create({
     justifyContent:"space-around"
 },
   tabBarStyle: {
+      /*
     position: "absolute",
     bottom: 20,
     left: 20,
     right: 20,
-    elevation: 20,
+    elevation: 20,*/
+    margin:10,
     backgroundColor: "white",
     borderRadius: 15,
     height:60,
@@ -303,7 +305,14 @@ const styles = StyleSheet.create({
     
 
 },
-
+containerProfile:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    zIndex: 10000,
+    position: 'relative',
+    height:100
+},
 tabProfileStyle:{
     flex: 1,
     flexDirection:"row",
@@ -312,7 +321,7 @@ tabProfileStyle:{
     backgroundColor:"rgba(213,236,252,1)",
     
     position: 'absolute',
-    top: 60,
+    top: 20,
     left: 10,
     right: 10,
     
@@ -345,11 +354,12 @@ rows:{
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 130
+    paddingTop: 0
  },
   scrollView: {
     backgroundColor: "rgba(213,236,252,0)",
-    marginHorizontal: 10,
+    marginHorizontal: 0,
+    paddingHorizontal: 10
   },
   text: {
     fontSize: 42,

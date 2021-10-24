@@ -1,74 +1,27 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, ScrollView} from 'react-native';
+import React from "react";
+import { createStackNavigator } from '@react-navigation/stack';
+import {StyleSheet, Text, View, SafeAreaView ,Image,ImageBackground,StatusBar, ScrollView, TouchableHighlight, Button} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
+import LoginContainer from '../screens/LoginContainer'
+import LoginChange from '../screens/LoginChange'
 
-//Carga de screens
-import LoginUser from "../screens/LoginUser";
-import LoginChange from "../screens/LoginChange";
-
-
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const LoginNavigation = () => {
 
-    return (
-        <Tab.Navigator 
-        screenOptions={{
-            tabBarShowLabel:false,
-            tabBarStyle: {
-                position: 'absolute',
-                
-                bottom: 25,
-                left: 20,
-                right: 20,
-                elevation: 20,
-                backgroundColor: "#ffffff",
-                borderRadius: 15,
-                height:60,
-                
+    return(
+            <Stack.Navigator initialRouteName="LoginContainer" screenOptions={{
+                headerShown: false
+            }}>
+                <Stack.Screen name="LoginContainer" component={LoginContainer}></Stack.Screen>
+                <Stack.Screen name="LoginChange" component={LoginChange}></Stack.Screen>
 
-                ... styles.shadow
-                
-            }
-        }
-
-        }>
-                <Tab.Screen name="LoginUser" component={LoginUser}  options={{
-                 headerShown: false,
-                tabBarIcon: ({focused})=>(
-                    <View style={styles.containertab}>
-                        <Text
-                                style={{width:80,
-                                    height:25,
-                                    fontWeight: "bold",
-                                    fontSize: 11,
-                                    color: focused ? "#1464a5" : "#072146"
-                                }}
-                                >INICIA SESION</Text>
-                        
-                    </View>
-                ),
-            }}/>
-                <Tab.Screen name="LoginChange" component={LoginChange} options={{
-                 headerShown: false,
-                tabBarIcon: ({focused})=>(
-                    <View style={styles.containertab}>
-                        <Text
-                                style={{width:80,
-                                    height:25,
-                                    fontWeight: "bold",
-                                    fontSize: 11,
-                                    color: focused ? "#1464a5" : "#072146"
-                                }}
-                                >CAMBIAR USUARIO</Text>
-                        
-                    </View>
-                ),
-            }}/>
-        </Tab.Navigator>
-    );
+            </Stack.Navigator>
+        );
 }
+
+export default LoginNavigation;
 
 const styles = StyleSheet.create({
     container: {
@@ -134,5 +87,3 @@ const styles = StyleSheet.create({
     }
     
   });
-
-export default LoginNavigation;

@@ -15,8 +15,7 @@ import PagoServicios from '../screens/PagoServicios';
 import Perfil from '../screens/Perfil';
 import SaludFinanciera from '../screens/SaludFinanciera';
 import ScanQR from '../screens/ScanQR';
-import LoginUser from "../screens/LoginUser";
-import LoginChange from "../screens/LoginChange";
+
 
 
 const Tab = createBottomTabNavigator();
