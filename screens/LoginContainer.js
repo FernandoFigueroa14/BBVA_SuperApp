@@ -7,12 +7,14 @@ const LoginContainer = () => {
           <ScrollView style={styles.scrollView}>
             <View style={styles.loginContainer}>
                 <View style={styles.nav}>
-                    <View style={styles.navInicia}>
-                        <Text style={styles.navInicia}>INICIA SESION</Text>
-                    </View>
-                    <View style={styles.navCambia}>
-                        <Text style={styles.navCambia}>CAMBIAR CUENTA</Text>
-                    </View>
+                    <TouchableOpacity onPress={()=> navigation.navigate("LoginContainer")}>
+                        <Image source={require('../Front_Design/Icons/plus(1).png')} style={{width:25,
+                            height:25}}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=> navigation.navigate("LoginChange")}>
+                        <Image source={require('../Front_Design/Icons/plus(1).png')} style={{width:25,
+                            height:25}}/>
+                    </TouchableOpacity>
                 </View>
             </View>
           </ScrollView>
