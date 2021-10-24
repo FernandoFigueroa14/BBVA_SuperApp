@@ -18,6 +18,7 @@ const deviceWidth = Dimensions.get('window').width
 const Cuenta = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+
       <View style={styles.containerProfile}>
 
         <View style={styles.tabProfileStyle}>
@@ -45,37 +46,56 @@ const Cuenta = ({ navigation }) => {
           
         </View>
 
-        <View>
-        <Image
-                style={{
-                  width: 300,
-                  height: 200,
-                  marginTop:160,
-                  
-                
-                  borderRadius: 10,
-                }}
-                source={require("../Front_Design/Tarjetas/Back_marino_completo.png")}
-              />
-        </View>
-
+       
        
            
       </View>
 
       <ScrollView style={styles.scrollView}>
 
-       <View style={{
-           flex: 1,
-           flexDirection:"row",
-           alignItems:"center",
-           justifyContent:"center"
-       }}>
+      <View
+            contentContainerStyle={styles.redbox}
            
-           <Text>Accioes rápidas</Text>
-        
-           <View style={{flex: 1,flexDirection: "row"}}>
-           <TouchableOpacity style={{ flex: 1, alignItems: "center" }}>
+          >
+            
+              <Image
+                style={{
+                  width: 340,
+                  height: 200,
+                    alignSelf:"center",
+                  borderRadius: 10,
+                  marginTop:25
+                }}
+                source={require("../Front_Design/Tarjetas/Back_marino_completo.png")}
+              />
+            
+        </View>
+
+      <View style={styles.greenbox}>
+            <View style={{ alignSelf: "flex-start", marginLeft: 15 }}>
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  marginBottom: 10,
+                  color: "#072146",
+                  alignSelf:"center",
+                  marginTop: 15,
+                  marginBottom: 25,
+                }}
+              >
+               Acciones rápidas
+              </Text>
+            </View>
+
+            <View
+              style={{
+                flex: 1,
+                flexDirection: "row",
+                justifyContent: "space-around",
+              }}
+            >
+              <TouchableOpacity onPress={() => navigation.navigate("MandarDinero")} style={{ flex: 1, alignItems: "center" }}>
                 <Image
                   style={{
                     width: 50,
@@ -83,13 +103,13 @@ const Cuenta = ({ navigation }) => {
                     margin: 5,
                     borderWidth: 2,
                     borderColor: "#072156",
+
                     borderRadius: 100,
                   }}
                   source={require("../Front_Design/Icons/Asset_30.png")}
                 />
                 <Text style={styles.nombres}>Transferir</Text>
               </TouchableOpacity>
-
               <TouchableOpacity style={{ flex: 1, alignItems: "center" }}>
                 <Image
                   style={{
@@ -98,6 +118,7 @@ const Cuenta = ({ navigation }) => {
                     margin: 5,
                     borderWidth: 2,
                     borderColor: "#072156",
+
                     borderRadius: 100,
                   }}
                   source={require("../Front_Design/Icons/Asset_31.png")}
@@ -113,13 +134,13 @@ const Cuenta = ({ navigation }) => {
                     margin: 5,
                     borderWidth: 2,
                     borderColor: "#072156",
+
                     borderRadius: 100,
                   }}
                   source={require("../Front_Design/Icons/Asset_32.png")}
                 />
                 <Text style={styles.nombres}>Retiro sin tarjeta</Text>
               </TouchableOpacity>
-
               <TouchableOpacity style={{ flex: 1, alignItems: "center" }}>
                 <Image
                   style={{
@@ -128,17 +149,454 @@ const Cuenta = ({ navigation }) => {
                     margin: 5,
                     borderWidth: 2,
                     borderColor: "#072156",
+
                     borderRadius: 100,
                   }}
                   source={require("../Front_Design/Icons/Asset_33.png")}
                 />
-                <Text style={styles.nombres}>Más opciones</Text>
+                <Text style={styles.nombres}>Más Opciones</Text>
               </TouchableOpacity>
 
-           </View>
+        
+            </View>
+            </View>
 
-       </View>
+      
+      
+       <ScrollView
+            contentContainerStyle={styles.redbox}
+            horizontal={true}
+            decelerationRate={0}
+            snapToInterval={350}
+            snapToAlignment={"center"}
+          >
+            <TouchableOpacity onPress={() => navigation.navigate("Cuenta")}>
+              <Image
+                style={{
+                  width: 200,
+                  height: 200,
+                  marginRight: -5,
+                  marginLeft: 15,
+                  borderRadius: 10,
+                }}
+                source={require("../Front_Design/Salud/Asset9.png")}
+              />
+            </TouchableOpacity>
 
+            <View style={{ flex: 1, alignItems: "flex-start" }}>
+              <TouchableOpacity>
+                <Image
+                  style={{
+                    width: 95,
+                    height: 95,
+                    marginRight: 10,
+                    marginLeft: 15,
+                    borderRadius: 10,
+                    marginBottom: 10,
+                  }}
+                  source={require("../Front_Design/Salud/Asset11.png")}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  style={{
+                    width: 95,
+                    height: 95,
+                    marginRight: 10,
+                    marginLeft: 15,
+                    borderRadius: 10,
+                  }}
+                  source={require("../Front_Design/Salud/Asset16.png")}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity>
+              <Image
+                style={{
+                  width: 150,
+                  height: 200,
+                  borderRadius: 10,
+                }}
+                source={require("../Front_Design/Salud/Asset12.png")}
+              />
+            </TouchableOpacity>
+
+            <View style={{ flex: 1, alignItems: "flex-start" }}>
+              <TouchableOpacity>
+                <Image
+                  style={{
+                    width: 95,
+                    height: 95,
+                    marginRight: 10,
+                    marginLeft: 15,
+                    borderRadius: 10,
+                    marginBottom: 10,
+                  }}
+                  source={require("../Front_Design/Salud/Asset13.png")}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image
+                  style={{
+                    width: 95,
+                    height: 95,
+                    marginRight: 10,
+                    marginLeft: 15,
+                    borderRadius: 10,
+                  }}
+                  source={require("../Front_Design/Salud/Asset14.png")}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity>
+              <Image
+                style={{
+                  width: 150,
+                  height: 200,
+                  borderRadius: 10,
+                }}
+                source={require("../Front_Design/Salud/Asset15.png")}
+              />
+            </TouchableOpacity>
+
+
+          </ScrollView>
+
+          <View style={styles.corolbox}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 20,
+                color: "#072146",
+                alignSelf: "center",
+                marginTop: 30,
+                marginBottom:30
+              }}
+            >
+              Ultimos Movimientos
+            </Text>
+
+            
+
+                <View style={styles.tiraBlanca}>
+
+                <View style={styles.marca}>
+
+                <Image 
+                source={require("../Front_Design/Logos/Apple_logo_black.svg.png")}
+
+                style={{width:42, height:50, marginLeft:20,marginRight:20}}
+                >
+
+                </Image>
+                
+
+                <View style={{flex:1}}>
+
+                <Text style={{
+                     fontWeight: "bold",
+                     fontSize: 15,
+                     color: "#072146",
+                    
+                    
+                    
+                }}>Apple Store</Text>
+                <Text
+                style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    color: "red",
+                   
+                   
+                   
+               }}>Gasto</Text>
+                </View>
+                </View>
+
+                <View style={{flex:1, flexDirection:"column",alignItems:"flex-end", marginRight:10}}>
+
+                <Text style={{
+                    fontWeight: "bold",
+                    fontSize: 15,
+                    color: "red",
+                    
+                    
+                    
+                }}>-$13,278.00</Text>
+                <Text
+                style={{
+                    fontWeight: "bold",
+                    fontSize: 12,
+                    color: "#BCBCBC",
+                
+                
+                
+                }}>21 de Octubre 2021</Text>
+                </View>
+
+
+
+                </View>
+
+
+                <View style={styles.tiraBlanca}>
+
+                <View style={styles.marca}>
+
+                <Image 
+                source={require("../Front_Design/Profile_pics/Dumi.jpeg")}
+
+                style={{width:42, height:50, marginLeft:20,marginRight:20, borderRadius:100}}
+                >
+
+                </Image>
+                
+
+                <View style={{flex:1}}>
+
+                <Text style={{
+                     fontWeight: "bold",
+                     fontSize: 12,
+                     color: "#072146",
+                    
+                    
+                    
+                }}>Transferencia de Dumas</Text>
+                <Text
+                style={{
+                    
+                    fontSize: 12,
+                    color: "green",
+                   
+                   
+                   
+               }}>Ingreso</Text>
+                </View>
+                </View>
+
+                <View style={{flex:1, flexDirection:"column",alignItems:"flex-end", marginRight:10}}>
+
+                <Text style={{
+                    fontWeight: "bold",
+                    fontSize: 15,
+                    color: "green",
+                    
+                    
+                    
+                }}>$13,278.00</Text>
+                <Text
+                style={{
+                    
+                    fontSize: 12,
+                    color: "#BCBCBC",
+                
+                
+                
+                }}>21 de Octubre 2021</Text>
+                </View>
+
+
+
+                </View>
+
+                <View style={styles.tiraBlanca}>
+
+                    <View style={styles.marca}>
+
+                    <Image 
+                    source={require("../Front_Design/Logos/1280px-Sky_Televison_logo.svg.png")}
+
+                    style={{width:40, height:16, marginLeft:20,marginRight:20,tintColor:"black"}}
+                    >
+
+                    </Image>
+
+
+                    <View style={{flex:1}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 15,
+                        color: "#072146",
+                        
+                        
+                        
+                    }}>Sky</Text>
+                    <Text
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: 12,
+                        color: "red",
+                    
+                    
+                    
+                    }}>Gasto</Text>
+                    </View>
+                    </View>
+
+                    <View style={{flex:1, flexDirection:"column",alignItems:"flex-end", marginRight:10}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 15,
+                        color: "red",
+                        
+                        
+                        
+                    }}>-$3,278.00</Text>
+                    <Text
+                    style={{
+                        
+                        fontSize: 12,
+                        color: "#BCBCBC",
+
+
+
+                    }}>12 de Octubre 2021</Text>
+                    </View>
+
+
+
+                    </View>
+
+
+                <View style={styles.tiraBlanca}>
+
+                    <View style={styles.marca}>
+
+                    <Image 
+                    source={require("../Front_Design/Logos/2560px-McDonald's_logo.svg.png")}
+
+                    style={{width:60, height:40, marginLeft:20,marginRight:20}}
+                    >
+
+                    </Image>
+
+
+                    <View style={{flex:1}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 11,
+                        color: "#072146",
+                        
+                        
+                        
+                    }}>McDonald's</Text>
+                    <Text
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: 12,
+                        color: "red",
+
+
+
+                    }}>Gasto</Text>
+                    </View>
+                    </View>
+
+                    <View style={{flex:1, flexDirection:"column",alignItems:"flex-end", marginRight:10}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 15,
+                        color: "red",
+                        
+                        
+                        
+                    }}>-$1,278.00</Text>
+                    <Text
+                    style={{
+                        
+                        fontSize: 12,
+                        color: "#BCBCBC",
+
+
+
+                    }}>12 de Octubre 2021</Text>
+                    </View>
+
+
+
+                    </View>
+
+                    <View style={styles.tiraBlanca}>
+
+                    <View style={styles.marca}>
+
+                    <Image 
+                    source={require("../Front_Design/Logos/Intel_logo_(2006-2020).svg.png")}
+
+                    style={{width:60, height:40, marginLeft:20,marginRight:20}}
+                    >
+
+                    </Image>
+
+
+                    <View style={{flex:1}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 11,
+                        color: "#072146",
+                        
+                        
+                        
+                    }}>Intel</Text>
+                    <Text
+                    style={{
+                        fontWeight: "bold",
+                        fontSize: 12,
+                        color: "green",
+
+
+
+                    }}>Ingreso</Text>
+                    </View>
+                    </View>
+
+                    <View style={{flex:1, flexDirection:"column",alignItems:"flex-end", marginRight:10}}>
+
+                    <Text style={{
+                        fontWeight: "bold",
+                        fontSize: 15,
+                        color: "green",
+                        
+                        
+                        
+                    }}>$50,278.00</Text>
+                    <Text
+                    style={{
+                       
+                        fontSize: 12,
+                        color: "#BCBCBC",
+
+
+
+                    }}>12 de Octubre 2021</Text>
+                    </View>
+
+
+
+                    </View>
+
+
+        
+                
+            
+
+            
+          </View>
+
+
+          
+
+          
+
+      
+    
       </ScrollView>
 
       <View style={styles.tabBarStyle}>
@@ -189,6 +647,28 @@ const Cuenta = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+
+
+marca:{
+    flex:1,
+    flexDirection:"row",
+    alignItems:"center"
+
+    
+
+},
+
+tiraBlanca:{
+    backgroundColor: "white",
+    flexDirection:"row",
+    alignItems:"center",
+    justifyContent:"space-around",
+    width: 350,
+    height: 100,
+    borderRadius:10,
+    marginBottom:20
+
+},
   container: {
     flex: 1,
     paddingTop: StatusBar.currentHeight,
@@ -273,6 +753,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(213,236,252,0)",
     marginHorizontal: 0,
     paddingHorizontal: 10,
+    flex:1
   },
   text: {
     fontSize: 42,
@@ -286,19 +767,22 @@ const styles = StyleSheet.create({
     color: "#072146",
   },
   corolbox: {
-    width: deviceWidth-40,
-    height: (deviceWidth-40)*2.3,
+    
+    height: (deviceWidth-40)*2,
+    backgroundColor:"#F2F2F2",
 
     flex: 1,
 
     alignItems: "center",
+    
+    
   },
   greenbox: {
     paddingTop: 10,
     paddingBottom: 10,
     width: 365,
     height: 200,
-    backgroundColor: "white",
+   
     borderRadius: 10,
     flex: 1,
     justifyContent: "center",
