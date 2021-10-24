@@ -83,7 +83,7 @@ const SaludFinanciera = ({ navigation }) => {
           </TouchableOpacity>
 
           <View style={styles.containerfast}>
-            <TouchableOpacity onPress={() => navigation.navigate("FastPay")}>
+            <TouchableOpacity onPress={() => navigation.navigate("FastPayIns")}>
               <Image
                 source={require("../Front_Design/Icons/fastpay.png")}
                 style={{ width: 65, height: 65 }}

@@ -18,6 +18,7 @@ import LoginContainer from '../screens/LoginContainer'
 import LoginChange from '../screens/LoginChange';
 import Login from '../screens/Login';
 import Cuenta from '../screens/Cuenta';
+import FastPayIns from '../screens/FastPayIns';
 
 
 
@@ -33,6 +34,7 @@ const Navigation = () => {
                 <Stack.Screen name="Loader" component={Loader}></Stack.Screen>
                 <Stack.Screen name="SaludFinanciera" component={SaludFinanciera}></Stack.Screen>
                 <Stack.Screen name="FastPay" component={FastPay}></Stack.Screen>
+                <Stack.Screen name="FastPayIns" component={FastPayIns}></Stack.Screen>
                 <Stack.Screen name="Inversiones" component={Inversiones}></Stack.Screen>
                 <Stack.Screen name="PagoServicios" component={PagoServicios}></Stack.Screen>
                 <Stack.Screen name="LoginComponent" component={LoginComponent}></Stack.Screen>
