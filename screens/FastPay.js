@@ -16,6 +16,7 @@ const FastPay = ({navigation}) => {
                     <Text>[CAPTURE]</Text>
                 </Camera>
             </View>
+            <ScrollView>
             <View style={styles.info}>
                 <Text style={{ fontWeight: "bold", fontSize: 18 }}>Se utilizará la información de: </Text>
                 <TouchableOpacity onPress={() => navigation.navigate("Perfil")}>
@@ -57,6 +58,7 @@ const FastPay = ({navigation}) => {
                     source={require("../Front_Design/Tarjetas/Asset25.png")}
                 />
                 </TouchableOpacity>
+          </ScrollView>
           </ScrollView>
           <View style={styles.tabBarStyle}>
             <View style={styles.rows}>
@@ -124,8 +126,8 @@ const styles = StyleSheet.create({
       marginTop: 30,
     },
     tarjetas: {
-        flex: 0.5,
-        top: 35
+        flex: 0.7,
+        marginTop:50
     },
     tabBarStyle: {
         /*
