@@ -15,16 +15,16 @@ const getUser = async () => {
   } catch (error) {
     return {
       "id": 1,
-      "nombres": "Saul",
-      "apellidos": "Toral",
-      "correo": "saulToral@hotmail.com",
+      "nombres": "Carlos",
+      "apellidos": "Pano",
+      "correo": "carlospan8@hotmail.com",
       "contraseña": "superApp2021",
       "cuenta": 1234567890
     }
   }
 };
 
-console.log(getUser());
+
 
 const LoginComponent = ({navigation}) => {
 
