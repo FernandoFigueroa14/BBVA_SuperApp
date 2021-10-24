@@ -14,11 +14,11 @@ const FastPayIns = ({navigation}) => {
                     <Text style={styles.textAbove}>PAGA TODO EN</Text>
                     <Text style={styles.textAboveBold}>DONDE QUIERAS</Text>
                     <Text style={styles.textAboveLight}>No más terminales y todo en el mismo lugar</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("FastPay")}>
                         <Image source={require("../Front_Design/Btns/abrirCamara.png") } style={styles.imagenCamara} ></Image>
                     </TouchableOpacity>
                     <Text style={styles.textTitle}>1. Identifica</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity onPress={() => navigation.navigate("FastPay")}>
                         <Image source={require("../Front_Design/Btns/paga.png") } style={styles.imagenPaga} ></Image>
                     </TouchableOpacity>
 
