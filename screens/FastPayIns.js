@@ -6,15 +6,39 @@ const FastPayIns = ({navigation}) => {
 
     return (
         <SafeAreaView style={{flex: 1}}>
-<View style={styles.container}>
-            <ImageBackground source={require("../Front_Design/Images/login.jpg")} style={styles.imagenBack}>
+<View style={styles.containerLogin}>
+            <ImageBackground source={require("../Front_Design/Salud/fastpay.png")} style={styles.imagenBack}>
                 <View style={styles.header}>
-                    <Image source={require("../Front_Design/Logos_BBVA/superApp_1.png") } style={styles.imagen} ></Image>
-                    <Text style={styles.text}>Hola, </Text>
-                    <Text style={styles.textAbove}>Ingresa tu contraseña para continuar</Text>
+                    <Image source={require("../Front_Design/Logos_BBVA/BBVA_FAST.png") } style={styles.imagen} ></Image>
+                    <Text style={styles.text}>FastPay </Text>
+                    <Text style={styles.textAbove}>PAGA TODO EN</Text>
+                    <Text style={styles.textAboveBold}>DONDE QUIERAS</Text>
+                    <Text style={styles.textAboveLight}>No más terminales y todo en el mismo lugar</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                        <Image source={require("../Front_Design/Btns/abrirCamara.png") } style={styles.imagenCamara} ></Image>
+                    </TouchableOpacity>
+                    <Text style={styles.textTitle}>1. Identifica</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                        <Image source={require("../Front_Design/Btns/paga.png") } style={styles.imagenPaga} ></Image>
+                    </TouchableOpacity>
+
+                    <Text style={styles.textTitle}>1. Escanea</Text>
+                    <Image source={require("../Front_Design/Icons/qr.png") } style={styles.imagenIcon} ></Image>
+                    <Text style={styles.textParrafo}>Ahora con solo escanear el código QR</Text>
+                    <Text style={styles.textParrafo}>generado por la aplicación, podrás escoger</Text>
+                    <Text style={styles.textParrafo}>a BBVA como método de pago.</Text>
+                
+                    <Text style={styles.textTitle}>1. ¡Disfruta!</Text>
+                    <Image source={require("../Front_Design/Icons/Asset_33.png") } style={styles.imagenIcon} ></Image>
+                    <Text style={styles.textParrafo}>Con tu perfil y tarjeta de preferencia, FastPay</Text>
+                    <Text style={styles.textParrafo}>completará TODOS los datos para finalizar tu</Text>
+                    <Text style={styles.textParrafo}>compra en segundos.</Text>
+                
                 </View>
             </ImageBackground>
         </View>
+
+        
         <View style={styles.tabBarStyle}>
         <View style={styles.rows}>
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
@@ -67,47 +91,82 @@ export default FastPayIns;
 
 const styles = StyleSheet.create({
     containerLogin: {
-        flex: 0.5
+        flex: 1
     },
     imagenBack:{
-      flex:1,
-      justifyContent:"center",
-      height: 300,
+      height: 200,
       
     },
    
     header:{
         flex:1,
         alignItems:"center",
-        justifyContent: "center"
+        justifyContent: "flex-start",
+        marginTop: 10
     },
 
     imagen: {
-      width: 150,
-      height:70,
-      position: "absolute",
-      top: 25
+      width: 20,
+      height:35,
     },
 
+    imagenCamara: {
+        width: 200,
+        height:55,
+        borderRadius: 10,
+        marginTop: 20
+      },
+      imagenPaga: {
+        width: 160,
+        height:40,
+        borderRadius: 10,
+        marginTop: 10
+      },
+      imagenIcon: {
+        width: 50,
+        height:50,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 10
+      },
     nombre:{
         fontWeight: "bold",
         color: "white"
     },
 
     text:{
-        fontSize: 30,
+        fontSize: 25,
         color: 'white',
-        fontWeight: "400",
-        alignSelf: "flex-start",
-        marginLeft: 25,
-        marginTop: 40
+        fontWeight: "bold",
+        
     },
     textAbove:{
+        fontSize: 15,
+        color: 'white',
+        fontWeight: "400",
+        marginTop: 5
+    },
+    textAboveBold:{
+        fontSize: 27,
+        color: 'white',
+        fontWeight: "bold",
+    },
+    textAboveLight:{
         fontSize: 10,
         color: 'white',
-        fontWeight: "200",
-        alignSelf: "flex-start",
-        marginLeft: 25
+        fontWeight: "400",
+    },
+    textTitle:{
+        fontSize: 20,
+        color: "#072146",
+        fontWeight: "bold",
+        marginTop: 15
+    },
+    textParrafo:{
+        fontSize: 10,
+        color: "#072146",
+        fontWeight: "bold",
+        marginTop: 0
     },
     shadow: {
         
@@ -158,5 +217,8 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginBottom: 40,
       },
+      containerMain:{
+          
+      }
     
   });
