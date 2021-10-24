@@ -25,10 +25,12 @@
     "react-native-screens": "~3.8.0",
     "react-native-svg": "12.1.1",
     "react-native-svg-charts": "^5.4.0",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "yarm": "^0.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
   },
-  "private": true
+  "private": true,
+  "version": "0.0.0"
 }
