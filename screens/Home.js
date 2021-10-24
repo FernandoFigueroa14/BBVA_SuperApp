@@ -214,8 +214,8 @@ const Home = ({navigation}) => {
          <TouchableOpacity >
                  <Image
                  style={{
-                    width: 430,
-                    height:200,
+                    width: 400,
+                    height:800,
                     margin: 10,
                     borderRadius:10
                     
@@ -354,11 +354,12 @@ rows:{
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 130
+    paddingTop: 0
  },
   scrollView: {
     backgroundColor: "rgba(213,236,252,0)",
-    marginHorizontal: 10,
+    marginHorizontal: 0,
+    paddingHorizontal: 10
   },
   text: {
     fontSize: 42,
@@ -375,7 +376,7 @@ rows:{
  },
  corolbox: {
     width: 365,
-    height: 400,
+    height: 880,
    
     flex:1,
    
