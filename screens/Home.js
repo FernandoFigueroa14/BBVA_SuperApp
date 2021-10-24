@@ -193,11 +193,11 @@ const Home = ({navigation}) => {
          <View style = {styles.corolbox} >
          <Text style={{fontWeight: "bold", fontSize: 20, color:"#072146", alignSelf:"flex-start",marginTop:30}}>Mis tarjetas:</Text>
          
-         <TouchableOpacity >
+        
                  <Image
                  style={{
-                    width: 430,
-                    height:200,
+                    width: 400,
+                    height:800,
                     margin: 10,
                     borderRadius:10
                     
@@ -206,7 +206,7 @@ const Home = ({navigation}) => {
                  />
         
 
-             </TouchableOpacity>
+            
              
             
                 
@@ -366,7 +366,7 @@ rows:{
  },
  corolbox: {
     width: 365,
-    height: 400,
+    height: 880,
    
     flex:1,
    

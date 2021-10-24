@@ -12,9 +12,11 @@ import {
 } from 'react-native'
 
 import PieChartWithDynamicSlices from '../graphics/pieChart'
-import ProgressBars from '../graphics/progressBars'
+//import ProgressBars from '../graphics/progressBars'
 
 const deviceWidth = Dimensions.get('window').width
+
+
 
 const SaludFinanciera = ({ navigation }) => {
   return (
@@ -40,7 +42,7 @@ const SaludFinanciera = ({ navigation }) => {
       <View style={{ flex: 2 }}>
         <Image
           source={require('../Front_Design/Salud/Asset_53.png')}
-          style={{ width: deviceWidth - 60, height: 100,
+          style={{ width: deviceWidth - 60, height: (deviceWidth-60)/3,
             marginHorizontal: 30, justifyContent: 'center' }}
         />
       </View>
