@@ -1,13 +1,20 @@
 import React from 'react'
 import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-
+import { RNCamera, FaceDetector, Camera } from 'react-native-camera';
 
 const FastPay = ({navigation}) => {
 
     return (
         <View style={styles.container}>
             <View style={styles.camara}>
-
+                <Camera
+                    ref={(cam) => {
+                        this.camera = cam;
+                    }}
+                    style={styles.preview}
+                    aspect={Camera.constants.Aspect.fill}>
+                    <Text>[CAPTURE]</Text>
+                </Camera>
             </View>
             <View style={styles.info}>
                 <Text style={{ fontWeight: "bold", fontSize: 18 }}>Se utilizará la información de: </Text>
