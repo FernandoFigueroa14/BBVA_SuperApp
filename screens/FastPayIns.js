@@ -47,46 +47,70 @@ const FastPayIns = ({ navigation }) => {
                         flex: 1,
                         flexDirection: "column",
                         alignContent: "center",
-                    }}>
-                    <View style = {{flex:1, alignContent: "center", alignItems: "center"}}><Text style={styles.textTitle}>1. Identifica</Text>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("FastPay")}
+                    }}
+                >
+                    <View
+                        style={{
+                            flex: 1,
+                            alignContent: "center",
+                            alignItems: "center",
+                        }}
                     >
+                        <Text style={styles.textTitle}>1. Identifica</Text>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate("FastPay")}
+                        >
+                            <Image
+                                source={require("../Front_Design/Btns/paga.png")}
+                                style={styles.imagenPaga}
+                            ></Image>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View
+                        style={{
+                            flex: 1,
+                            alignContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <Text style={styles.textTitle}>2. Escanea</Text>
                         <Image
-                            source={require("../Front_Design/Btns/paga.png")}
-                            style={styles.imagenPaga}
+                            source={require("../Front_Design/Icons/qr.png")}
+                            style={styles.imagenIcon}
                         ></Image>
-                    </TouchableOpacity></View>
+                        <Text style={styles.textParrafo}>
+                            Ahora con solo escanear el código QR
+                        </Text>
+                        <Text style={styles.textParrafo}>
+                            generado por la aplicación, podrás escoger
+                        </Text>
+                        <Text style={styles.textParrafo}>
+                            a BBVA como método de pago.
+                        </Text>
+                    </View>
 
-                    <View style = {{flex:1, alignContent: "center", alignItems: "center"}}><Text style={styles.textTitle}>2. Escanea</Text>
-                    <Image
-                        source={require("../Front_Design/Icons/qr.png")}
-                        style={styles.imagenIcon}
-                    ></Image>
-                    <Text style={styles.textParrafo}>
-                        Ahora con solo escanear el código QR
-                    </Text>
-                    <Text style={styles.textParrafo}>
-                        generado por la aplicación, podrás escoger
-                    </Text>
-                    <Text style={styles.textParrafo}>
-                        a BBVA como método de pago.
-                    </Text></View>
-
-                    
-<View style = {{flex:1, alignContent: "center", alignItems: "center"}}>
-                    <Text style={styles.textTitle}>3. ¡Disfruta!</Text>
-                    <Image
-                        source={require("../Front_Design/Icons/Asset_33.png")}
-                        style={styles.imagenIcon}
-                    ></Image>
-                    <Text style={styles.textParrafo}>
-                        Con tu perfil y tarjeta de preferencia, FastPay
-                    </Text>
-                    <Text style={styles.textParrafo}>
-                        completará TODOS los datos para finalizar tu
-                    </Text>
-                    <Text style={styles.textParrafo}>compra en segundos.</Text>
+                    <View
+                        style={{
+                            flex: 1,
+                            alignContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <Text style={styles.textTitle}>3. ¡Disfruta!</Text>
+                        <Image
+                            source={require("../Front_Design/Icons/Asset_33.png")}
+                            style={styles.imagenIcon}
+                        ></Image>
+                        <Text style={styles.textParrafo}>
+                            Con tu perfil y tarjeta de preferencia, FastPay
+                        </Text>
+                        <Text style={styles.textParrafo}>
+                            completará TODOS los datos para finalizar tu
+                        </Text>
+                        <Text style={styles.textParrafo}>
+                            compra en segundos.
+                        </Text>
                     </View>
                 </ScrollView>
             </View>
