@@ -47,12 +47,20 @@ class PieChartWithDynamicSlices extends React.PureComponent {
           data={data}
         />
 
+        <View style={{
+            flex: 1,
+            position: 'absolute',
+            alignItems: 'center',
+            justifyContent: 'center',
+            left: deviceWidth / 2 - labelWidth / 2
+          }}>
+
         <Image
           source={require('../Front_Design/Icons/Asset_34.png')}
           style={{
             flex: 1,
-            position: 'absolute',
-            left: deviceWidth / 2 - 20 / 2,
+            //position: 'absolute',
+            //left: deviceWidth / 2 - 20 / 2,
             alignItems: 'center',
             width: 20,
             height: 20,
@@ -71,8 +79,8 @@ class PieChartWithDynamicSlices extends React.PureComponent {
           }}
           style={{
             flex: 1,
-            position: 'absolute',
-            left: deviceWidth / 2 - labelWidth / 2,
+            //position: 'absolute',
+            //left: deviceWidth / 2 - labelWidth / 2,
             textAlign: 'center',
             paddingTop: 30,
           }}>
@@ -94,6 +102,7 @@ class PieChartWithDynamicSlices extends React.PureComponent {
             {`${salud}`}
           </Text>
         </Text>
+        </View>
       </View>
     )
   }
