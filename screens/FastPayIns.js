@@ -21,7 +21,7 @@ const FastPayIns = ({navigation}) => {
                     <TouchableOpacity onPress={() => navigation.navigate("FastPay")}>
                         <Image source={require("../Front_Design/Btns/paga.png") } style={styles.imagenPaga} ></Image>
                     </TouchableOpacity>
-
+                    <ScrollView>
                     <Text style={styles.textTitle}>1. Escanea</Text>
                     <Image source={require("../Front_Design/Icons/qr.png") } style={styles.imagenIcon} ></Image>
                     <Text style={styles.textParrafo}>Ahora con solo escanear el código QR</Text>
@@ -33,11 +33,10 @@ const FastPayIns = ({navigation}) => {
                     <Text style={styles.textParrafo}>Con tu perfil y tarjeta de preferencia, FastPay</Text>
                     <Text style={styles.textParrafo}>completará TODOS los datos para finalizar tu</Text>
                     <Text style={styles.textParrafo}>compra en segundos.</Text>
-                
+                    </ScrollView>
                 </View>
             </ImageBackground>
         </View>
-
         
         <View style={styles.tabBarStyle}>
         <View style={styles.rows}>
