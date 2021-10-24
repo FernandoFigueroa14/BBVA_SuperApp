@@ -12,13 +12,9 @@ import LoginNavigation from './navigation/LoginNavigation';
 
 const App = () => {
   return(
-    <View style={styles.container}>
-      <Login/>
       <NavigationContainer>
-        <LoginNavigation/>
+        <Navigation/>
       </NavigationContainer>
-    </View>
-    
   );
 }
 
@@ -51,6 +47,14 @@ export default App;
 
 
 /*
+<View style={styles.container}>
+      <Login/>
+      <NavigationContainer>
+        <LoginNavigation/>
+      </NavigationContainer>
+    </View>
+
+
 <View style={styles.scrollView}>
         <Login/>
       </View>
