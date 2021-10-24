@@ -23,7 +23,7 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-    container: {
+    containerLogin: {
         flex: 0.5
     },
     imagenBack:{

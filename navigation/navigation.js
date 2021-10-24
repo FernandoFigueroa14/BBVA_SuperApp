@@ -13,6 +13,10 @@ import FastPay from '../screens/FastPay';
 import Inversiones from '../screens/Inversiones';
 import PagoServicios from '../screens/PagoServicios';
 import { NavigationContainer } from '@react-navigation/native';
+import LoginComponent from '../screens/LoginComponent';
+import LoginContainer from '../screens/LoginContainer'
+import LoginChange from '../screens/LoginChange';
+import Login from '../screens/Login';
 
 
 
@@ -20,7 +24,7 @@ const Stack = createStackNavigator();
 
 const Navigation = () => {
     return(
-            <Stack.Navigator initialRouteName="Home" screenOptions={{
+            <Stack.Navigator initialRouteName="Loader" screenOptions={{
                 headerShown: false
             }}>
                 <Stack.Screen name="Perfil" component={Perfil}></Stack.Screen>
@@ -30,8 +34,13 @@ const Navigation = () => {
                 <Stack.Screen name="FastPay" component={FastPay}></Stack.Screen>
                 <Stack.Screen name="Inversiones" component={Inversiones}></Stack.Screen>
                 <Stack.Screen name="PagoServicios" component={PagoServicios}></Stack.Screen>
+                <Stack.Screen name="LoginComponent" component={LoginComponent}></Stack.Screen>
+                <Stack.Screen name="LoginContainer" component={LoginContainer}></Stack.Screen>
+                <Stack.Screen name="LoginChange" component={LoginChange}></Stack.Screen>
+                <Stack.Screen name="Login" component={Login}></Stack.Screen>
 
             </Stack.Navigator>
+
         
         );
     }

@@ -3,10 +3,10 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, ImageBackg
 
 const LoginContainer = ({navigation}) => {
     const [text, onChangeText] = React.useState("XXXX-XXXX-XXXX-3297");
+    const [text1, onChangeTextT] = React.useState("");
     return (
         <SafeAreaView style={styles.container}>
           <ScrollView style={styles.scrollView}>
-            <View style={styles.loginContainer}>
                 <View style={styles.nav}>
                     <TouchableOpacity style={styles.navInicia} onPress={()=> navigation.navigate("LoginContainer")}>
                         <Image source={require('../Front_Design/Images/iniciar.png')} style={{width:120,
@@ -25,38 +25,41 @@ const LoginContainer = ({navigation}) => {
                         />
                         <TextInput
                             style={styles.input}
-                            onChangeText={onChangeText}
-                            placeholder="Contraseña"
+                            onChangeText={onChangeTextT}
+                            placeholder="Contraseña" 
+                            textContentType = 'newPassword'
                         />
                 </View>
-            </View>
+                <View style={styles.next}>
+                <TouchableOpacity onPress={()=> navigation.navigate("Home",{screen:'Home'})}>
+                    <Image source={require('../Front_Design/Images/next.png')} style={{width:55,
+                            height:55}}/>
+                 </TouchableOpacity>
+                </View>
           </ScrollView>
         </SafeAreaView>
       );
     }
     
     const styles = StyleSheet.create({
-      container: {
-        flex: 0.6,
+      containerContainer: {
+        flex: 0.9,
         paddingTop: StatusBar.currentHeight,
       },
-      scrollView: {
+      scrollViewContainer: {  
         backgroundColor: 'white',
         marginHorizontal: 30,
+        marginVertical: 0,
       },
-      text: {
+      textContainer: {
         fontSize: 42,
       },
       loginContainer:{
           flex:1,
           justifyContent: 'center',
           alignItems: 'center',
-          padding: 10
+          padding: 10,
 
-      },
-      imagenBack:{
-        flex:1,
-        justifyContent:"center",
       }, 
       nav: {
         marginTop: 10,
@@ -67,20 +70,34 @@ const LoginContainer = ({navigation}) => {
       navInicia: {
           padding:5,
           paddingBottom: 0,
-          orderColor: "#072146",
+          borderColor: "#072146",
           borderBottomWidth: 2
       },
       navCambia: {
           padding: 5
       },
-      datosContainer:{
-
-      },
       input: {
         height: 40,
         margin: 12,
-        borderWidth: 1,
+        textAlign: 'center',
+        backgroundColor: 'rgba(213,236,252,0.2)',
+        borderRadius: 10,
+        width: 200,
         padding: 10,
+      },
+      datosContainer:{
+          flex:1,
+          justifyContent:'center',
+          alignItems:'center',
+          width:300,
+          marginTop: 25
+      }, 
+      next:{
+          flex: 1,
+          justifyContent:'center',
+          alignItems:'center',
+          zIndex:100,
+          marginTop: 20
       }
     });
     
