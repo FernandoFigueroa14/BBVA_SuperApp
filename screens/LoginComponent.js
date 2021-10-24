@@ -5,13 +5,17 @@ import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, View, SectionLis
 import { NavigationContainer } from '@react-navigation/native';
 import { ImageBackground, TouchableOpacity, Image, TextInput } from 'react-native'
 
-
-import Navigation from '../navigation/navigation';
-import Login from './Login'
-import LoginContainer from './LoginContainer';
-import LoginNavigation from '../navigation/LoginNavigation';
-import LoginButtons from './LoginButton';
-
+const getMoviesFromApiAsync = async () => {
+  try {
+    const response = await fetch(
+      'https://reactnative.dev/movies.json'
+    );
+    const json = await response.json();
+    return json.movies;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 
 const LoginComponent = ({navigation}) => {

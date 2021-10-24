@@ -15,7 +15,7 @@ const PORT = process.env.PORT | 8080;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use('/usuario', userRouter);
+app.use('/usuarios', userRouter);
 
 
 db.sequelize.sync()

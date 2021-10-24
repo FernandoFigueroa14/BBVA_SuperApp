@@ -6,9 +6,9 @@ const Usuarios = db.Usuario;
 const usuariosController = {
         todosUsuarios: async (req, res) => {
             await Usuarios.findAll()
-                                    .then(ciudad => {
-                                        console.log(ciudad);
-                                        res.json(ciudad);
+                                    .then(usuario => {
+                                        console.log(usuario);
+                                        res.json(usuario);
                                     })
                                     .catch(error => console.log(error))
         },
@@ -17,18 +17,10 @@ const usuariosController = {
         
             console.log(req.body);
             
-            await Usuarios.findOne({where: {nombre: req.body.nombre}})
+            await Usuarios.findOne({where: {cuenta: req.body.cuenta}})
                             .then(async usuario => {
                                 if(usuario){
-                                    await Usuarios.update({interes: usuario.interes+1},{where: {id: ciudad.id}})
-                                    .then(() => {
-                                        console.log("El interes ha aumentado");
-                                        res.json({estado: "Usuario existente"});
-                                    })
-                                    .catch(error => {
-                                        console.log(error);
-                                        res.json({estado: "Error"});
-                                    });
+                                    
                                 }else{
                                     await Usuarios.create(req.body)
                                                 .then(resultado => {
@@ -41,8 +33,8 @@ const usuariosController = {
                                                 });
                                 }
                                 
-                                console.log(ciudad);
-                                res.json(ciudad);
+                                console.log(usuario);
+                                res.json(usuario);
                             })
                             .catch(error => {
                                 console.log(error);
