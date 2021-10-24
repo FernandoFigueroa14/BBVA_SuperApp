@@ -18,6 +18,8 @@ import LoginContainer from '../screens/LoginContainer'
 import LoginChange from '../screens/LoginChange';
 import Login from '../screens/Login';
 import Cuenta from '../screens/Cuenta';
+import MandarDinero from '../screens/mandarDinero';
+
 
 
 
@@ -40,6 +42,8 @@ const Navigation = () => {
                 <Stack.Screen name="LoginChange" component={LoginChange}></Stack.Screen>
                 <Stack.Screen name="Login" component={Login}></Stack.Screen>
                 <Stack.Screen name="Cuenta" component={Cuenta}></Stack.Screen>
+                <Stack.Screen name="MandarDinero" component={MandarDinero}></Stack.Screen>
+
 
 
             </Stack.Navigator>

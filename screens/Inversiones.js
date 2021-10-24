@@ -18,9 +18,10 @@ const Home = ({navigation}) => {
 
                 <View >
                     <TouchableOpacity onPress={()=> navigation.navigate("Perfil")}>
-                        <Image source={require('../Front_Design/Images/Asset7.png')} style={{width:100,
-                                    height:100,
-                                    marginRight:-18
+                        <Image source={require('../Front_Design/Logos/gbmhomebroker.png')} style={{width:80,
+                                    height:80,
+                                    marginRight:-18,
+                                    marginBottom: 80
                                     }}/>
                     </TouchableOpacity>
                 </View>
@@ -31,7 +32,7 @@ const Home = ({navigation}) => {
       <ScrollView style={styles.scrollView}>
         <View style={styles.mrContainer}>
 
-            <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 20, color:"#072146", alignSelf:"flex-start",marginLeft:15,marginTop:15}}>Mis cuentas en pesos: </Text>
+            <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 20, color:"#072146", alignSelf:"flex-start",marginLeft:15,marginTop:15}}>TOP 8 DE MERCADOS</Text>
             
          
          <View style = {styles.greenbox}>
@@ -57,7 +58,7 @@ const Home = ({navigation}) => {
                  
                  />
                  <Text style={styles.nombres}>GENIUS 21</Text>
-                 <Text style={styles.nombres2}>$59.30</Text>
+                 <Text style={styles.nombres3}>$59.30</Text>
 
              </TouchableOpacity>
            
@@ -74,7 +75,8 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>Fernando</Text>
+                <Text style={styles.nombres}>GMEXICO B</Text>
+                 <Text style={styles.nombres3}>$94.42</Text>
 
              </TouchableOpacity>
              <TouchableOpacity style={{flex:1,alignItems:"center"}}>
@@ -90,7 +92,8 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>Ernesto</Text>
+                <Text style={styles.nombres}>AMX L</Text>
+                 <Text style={styles.nombres3}>$17.44</Text>
 
              </TouchableOpacity>
              
@@ -107,7 +110,10 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>Alex</Text>
+                <Text style={styles.nombres}>GFNORTE O
+</Text>
+                 <Text style={styles.nombres3}>$138.85
+</Text>
 
              </TouchableOpacity>
 
@@ -128,7 +134,8 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>Saúl</Text>
+                <Text style={styles.nombres}>CUERVO *</Text>
+                 <Text style={styles.nombres2}>$43.29</Text>
 
              </TouchableOpacity>
            
@@ -145,7 +152,8 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>Fernando</Text>
+                <Text style={styles.nombres}>GCC *</Text>
+                 <Text style={styles.nombres2}>$152.99</Text>
 
              </TouchableOpacity>
              <TouchableOpacity style={{flex:1,alignItems:"center"}}>
@@ -161,7 +169,8 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>Ernesto</Text>
+                <Text style={styles.nombres}>GMEXICO B</Text>
+                 <Text style={styles.nombres2}>$94.42</Text>
 
              </TouchableOpacity>
              
@@ -178,7 +187,9 @@ const Home = ({navigation}) => {
                     }}
                     source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>Alex</Text>
+                <Text style={styles.nombres}>BBAJIO O</Text>
+                 <Text style={styles.nombres2}>$39.91
+</Text>
 
              </TouchableOpacity>
 
@@ -186,31 +197,37 @@ const Home = ({navigation}) => {
 
          </View>
          <View style = {styles.corolbox} >
-         <Text style={{fontWeight: "bold", fontSize: 20, color:"#072146", alignSelf:"flex-start",marginTop:30}}>Mis tarjetas:</Text>
+         <Text style={{fontWeight: "bold", fontSize: 20, color:"#072146", alignSelf:"flex-start",marginTop:30}}>MI CARTERA: </Text>
          
         
                  <Image
                  style={{
-                    width: 400,
-                    height:800,
+                    width: 365,
+                    height:410,
                     margin: 10,
                     borderRadius:10
                     
                     }}
-                 source ={require('../Front_Design/Tarjetas/Asset_27.png')}
+                 source ={require('../Front_Design/Salud/Asset_18.png')}
                  />
+
+<Text style={{fontWeight: "bold", fontSize: 20, color:"#072146", alignSelf:"flex-start",marginTop:30,marginBottom:20}}>VALOR ACTUAL PORTAFOLIO: </Text>
+         
         
+                 <Image
+                 style={{
+                    width: 365,
+                    height:210,
+                    margin: 10,
+                    borderRadius:10
+                    
+                    }}
+                 source ={require('../Front_Design/Salud/Asset_19.png')}
+                 />
 
-            
-             
-            
-                
-
-
-
-
-        
          </View>
+
+         
          
          
          </View>
@@ -360,11 +377,16 @@ rows:{
 nombres2:{
   fontSize: 11,
   fontWeight: '300',
+  color: 'red',
+},
+nombres3:{
+  fontSize: 11,
+  fontWeight: '300',
   color: '#86dc5f',
 },
  corolbox: {
     width: 365,
-    height: 880,
+    height: 820,
    
     flex:1,
    
