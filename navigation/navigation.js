@@ -17,6 +17,7 @@ import LoginComponent from '../screens/LoginComponent';
 import LoginContainer from '../screens/LoginContainer'
 import LoginChange from '../screens/LoginChange';
 import Login from '../screens/Login';
+import Cuenta from '../screens/Cuenta';
 
 
 
@@ -38,6 +39,8 @@ const Navigation = () => {
                 <Stack.Screen name="LoginContainer" component={LoginContainer}></Stack.Screen>
                 <Stack.Screen name="LoginChange" component={LoginChange}></Stack.Screen>
                 <Stack.Screen name="Login" component={Login}></Stack.Screen>
+                <Stack.Screen name="Cuenta" component={Cuenta}></Stack.Screen>
+
 
             </Stack.Navigator>
 

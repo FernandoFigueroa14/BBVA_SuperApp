@@ -58,7 +58,6 @@ class PieChartWithDynamicSlices extends React.PureComponent {
         <Image
           source={require('../Front_Design/Icons/Asset_34.png')}
           style={{
-            flex: 1,
             //position: 'absolute',
             //left: deviceWidth / 2 - 20 / 2,
             alignItems: 'center',
@@ -86,7 +85,7 @@ class PieChartWithDynamicSlices extends React.PureComponent {
           }}>
           <Text
             style={{
-              fontWeight: 'bold',
+              fontWeight: 'normal',
               fontSize: 8,
               color: '#072146',
             }}>
