@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, ImageBackground, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, ImageBackground, TouchableOpacity, Image, TextInput } from 'react-native'
 
 const LoginContainer = ({navigation}) => {
+    const [text, onChangeText] = React.useState("XXXX-XXXX-XXXX-3297");
     return (
         <SafeAreaView style={styles.container}>
           <ScrollView style={styles.scrollView}>
@@ -15,6 +16,18 @@ const LoginContainer = ({navigation}) => {
                         <Image source={require('../Front_Design/Images/cambiar.png')} style={{width:150,
                             height:25}}/>
                     </TouchableOpacity>
+                </View>
+                <View style={styles.datosContainer}>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeText}
+                            placeholder={text}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeText}
+                            placeholder="Contraseña"
+                        />
                 </View>
             </View>
           </ScrollView>
@@ -52,10 +65,22 @@ const LoginContainer = ({navigation}) => {
         justifyContent: 'space-between'
       },
       navInicia: {
-          padding:5
+          padding:5,
+          paddingBottom: 0,
+          orderColor: "#072146",
+          borderBottomWidth: 2
       },
       navCambia: {
           padding: 5
+      },
+      datosContainer:{
+
+      },
+      input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
       }
     });
     
