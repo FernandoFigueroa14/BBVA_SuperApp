@@ -80,7 +80,7 @@ const Home = ({navigation}) => {
          </ScrollView>
          <View style = {styles.greenbox}>
 
-             <View style={{alignSelf:"flex-start", marginLeft:5}}>
+             <View style={{alignSelf:"flex-start", marginLeft:15}}>
              <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 10, color:"#072146", alignSelf:"flex-start",marginTop:15,margiButtom:35}}>Mandar dinero rápido:</Text>
              </View>
              
@@ -190,8 +190,33 @@ const Home = ({navigation}) => {
              </View>
 
          </View>
-         <View style = {styles.corolbox} />
-         <View style = {styles.purplebox} />
+         <View style = {styles.corolbox} >
+         <Text style={{fontWeight: "bold", fontSize: 20, color:"#072146", alignSelf:"flex-start",marginTop:30}}>Mis tarjetas:</Text>
+         
+         <TouchableOpacity >
+                 <Image
+                 style={{
+                    width: 430,
+                    height:200,
+                    margin: 10,
+                    borderRadius:10
+                    
+                    }}
+                 source ={require('../Front_Design/Tarjetas/Asset_27.png')}
+                 />
+        
+
+             </TouchableOpacity>
+             
+            
+                
+
+
+
+
+        
+         </View>
+         
          
          </View>
       </ScrollView>
@@ -340,9 +365,12 @@ rows:{
      color: '#072146',
  },
  corolbox: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'red'
+    width: 365,
+    height: 400,
+   
+    flex:1,
+   
+    alignItems:"center"
  },
  greenbox: {
    paddingTop:10,
