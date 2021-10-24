@@ -9,11 +9,13 @@ const LoginContainer = ({navigation}) => {
                 <View style={styles.nav}>
                     <TouchableOpacity style={styles.navInicia} onPress={()=> navigation.navigate("LoginContainer")}>
                         <Image source={require('../Front_Design/Images/iniciar.png')} style={{width:120,
-                            height:25}}/>
+                            height:25,
+                            tintColor: "#CCCCCC"}}/>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.navCambia} onPress={()=> navigation.navigate("LoginChange")}>
                         <Image source={require('../Front_Design/Images/cambiar.png')} style={{width:150,
-                            height:25}}/>
+                            height:25,
+                            tintColor: "#072146"}}/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -55,7 +57,10 @@ const LoginContainer = ({navigation}) => {
           padding:5
       },
       navCambia: {
-          padding: 5
+          padding: 5,
+          paddingBottom: 0,
+          orderColor: "#072146",
+          borderBottomWidth: 2
       }
     });
     

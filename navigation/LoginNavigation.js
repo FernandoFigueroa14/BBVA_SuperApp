@@ -4,7 +4,7 @@ import {StyleSheet, Text, View, SafeAreaView ,Image,ImageBackground,StatusBar, S
 import { NavigationContainer } from "@react-navigation/native";
 
 import LoginContainer from '../screens/LoginContainer'
-import Login from '../screens/Login'
+import LoginChange from '../screens/LoginChange'
 
 const Stack = createStackNavigator();
 
@@ -15,7 +15,7 @@ const LoginNavigation = () => {
                 headerShown: false
             }}>
                 <Stack.Screen name="LoginContainer" component={LoginContainer}></Stack.Screen>
-                <Stack.Screen name="LoginChange" component={Login}></Stack.Screen>
+                <Stack.Screen name="LoginChange" component={LoginChange}></Stack.Screen>
 
             </Stack.Navigator>
         );
