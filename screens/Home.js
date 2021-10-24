@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar ,View,TouchableOpacity,Image} from 'react-native';
+import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar ,View,TouchableOpacity,Image,FlatList, Button} from 'react-native';
 
 const Home = ({navigation}) => {
   return (
@@ -8,13 +8,194 @@ const Home = ({navigation}) => {
        
       <ScrollView style={styles.scrollView}>
         <View style={styles.mrContainer}>
-         <View style = {styles.redbox} />
-         <View style = {styles.greenbox} />
+
+            <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 10, color:"#072146", alignSelf:"flex-start",marginLeft:15,marginTop:15}}>Mis cuentas en pesos: </Text>
+            
+         <ScrollView contentContainerStyle = {styles.redbox} horizontal={true} decelerationRate={0} snapToInterval={350} 
+    snapToAlignment={"center"} >
+            
+
+             <TouchableOpacity >
+                 <Image
+                 style={{
+                     width: 300,
+                     height:200,
+                     marginRight:-5,
+                     marginLeft:15,
+                     borderRadius:10
+                    }}
+                 source ={require('../Front_Design/Tarjetas/Back_marino_completo.png')}
+                 />
+
+             </TouchableOpacity>
+
+             <View style={{flex:1,alignItems:"flex-start" }}>
+                 
+             <TouchableOpacity >
+                 <Image
+                 style={{
+                     width: 250,
+                     height:95,
+                     marginRight:10,
+                     marginLeft:15,
+                     borderRadius:10,
+                     marginBottom:10
+                     
+                    }}
+                 source ={require('../Front_Design/Tarjetas/Asset23.png')}
+                 />
+
+             </TouchableOpacity>
+             <TouchableOpacity >
+                 <Image
+                 style={{
+                     width: 250,
+                     height:95,
+                     marginRight:10,
+                     marginLeft:15,
+                     borderRadius:10
+                    }}
+                 source ={require('../Front_Design/Tarjetas/Asset24.png')}
+                 />
+
+             </TouchableOpacity>
+
+             </View>
+             
+
+             <TouchableOpacity >
+                 <Image
+                 style={{
+                     width: 300,
+                     height:200,
+                     borderRadius:10
+                    }}
+                 source ={require('../Front_Design/Tarjetas/Asset25.png')}
+                 />
+
+             </TouchableOpacity>
+             
+            
+
+         </ScrollView>
+         <View style = {styles.greenbox}>
+
+             <View style={{alignSelf:"flex-start", marginLeft:5}}>
+             <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 10, color:"#072146", alignSelf:"flex-start",marginTop:15,margiButtom:35}}>Mandar dinero rápido:</Text>
+             </View>
+             
+             <View style={{flex:1, flexDirection: "row", justifyContent:"space-around"}}>
+
+             <TouchableOpacity style={{flex:1,alignItems:"center"}}>
+                 <Image
+                 style={{
+                    width: 50,
+                    height:50,
+                    margin: 5,
+                    borderWidth:2,
+                    borderColor:"#072156",
+                    
+                     borderRadius:100
+                    }}
+                 source ={require('../Front_Design/Profile_pics/Dumi.jpeg')}
+                 />
+                 <Text style={styles.nombres}>Ivan</Text>
+
+             </TouchableOpacity>
+             <TouchableOpacity style={{flex:1,alignItems:"center"}} >
+                 <Image
+                 style={{
+                    width: 50,
+                    height:50,
+                    margin: 5,
+                    borderWidth:2,
+                    borderColor:"#072156",
+                    
+                     borderRadius:100
+                    }}
+                 source ={require('../Front_Design/Profile_pics/Altor.jpeg')}
+                 />
+                 <Text style={styles.nombres}>Saúl</Text>
+
+             </TouchableOpacity>
+           
+             <TouchableOpacity style={{flex:1,alignItems:"center"}}>
+                 <Image
+                 style={{
+                    width: 50,
+                    height:50,
+                    margin: 5,
+                    borderWidth:2,
+                    borderColor:"#072156",
+                    
+                     borderRadius:100
+                    }}
+                 source ={require('../Front_Design/Profile_pics/Fer.jpeg')}
+                 />
+                 <Text style={styles.nombres}>Fernando</Text>
+
+             </TouchableOpacity>
+             <TouchableOpacity style={{flex:1,alignItems:"center"}}>
+                 <Image
+                 style={{
+                    width: 50,
+                    height:50,
+                    margin: 5,
+                    borderWidth:2,
+                    borderColor:"#072156",
+                    
+                     borderRadius:100
+                    }}
+                 source ={require('../Front_Design/Profile_pics/Neto.jpeg')}
+                 />
+                 <Text style={styles.nombres}>Ernesto</Text>
+
+             </TouchableOpacity>
+             
+             <TouchableOpacity style={{flex:1,alignItems:"center"}}>
+                 <Image
+                 style={{
+                    width: 50,
+                    height:50,
+                    margin: 5,
+                    borderWidth:2,
+                    borderColor:"#072156",
+                    
+                     borderRadius:100
+                    }}
+                 source ={require('../Front_Design/Profile_pics/Alex.jpg')}
+                 />
+                 <Text style={styles.nombres}>Alex</Text>
+
+             </TouchableOpacity>
+
+             </View>
+             
+             <View>
+             <TouchableOpacity >
+                 <Image
+                 style={{
+                    width: 80,
+                    height:30,
+                    margin: 10,
+                    borderRadius:5
+                    
+                    }}
+                 source ={require('../Front_Design/Btns/Asset_35.png')}
+                 />
+        
+
+             </TouchableOpacity>
+                
+             </View>
+
+         </View>
          <View style = {styles.corolbox} />
          <View style = {styles.purplebox} />
          
          </View>
       </ScrollView>
+
       <View style={styles.tabProfileStyle}>
 
         <View style={styles.columns}>
@@ -103,15 +284,24 @@ tabProfileStyle:{
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems: "center",
-    backgroundColor:"rgba(213,236,252,0)",
+    backgroundColor:"rgba(213,236,252,1)",
+    
     position: 'absolute',
-    top: 50,
-    left: 20,
-    right: 20,
+    top: 60,
+    left: 10,
+    right: 10,
     
     
     borderRadius: 15,
-    height:60,
+    height:80,
+    padding: 15,
+    shadowColor: '#072146',
+    shadowOffset:{
+        width: 0,
+        height: 6,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 1.5,
 },
 rows:{
     flex: 1,
@@ -133,26 +323,44 @@ rows:{
     paddingTop: 130
  },
   scrollView: {
-    backgroundColor: 'rgba(213,236,252,0.25)',
+    backgroundColor: "rgba(213,236,252,0)",
     marginHorizontal: 10,
   },
   text: {
     fontSize: 42,
   },
   redbox: {
-    width: 800,
-    height: 300,
-    backgroundColor: 'red'
+    
+    height: 250,
+
+ },
+ nombres:{
+     fontSize: 10,
+     fontWeight: 'bold',
+     color: '#072146',
  },
  corolbox: {
     width: 100,
     height: 100,
-    backgroundColor: '#ff7f50'
+    backgroundColor: 'red'
  },
  greenbox: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'green'
+   paddingTop:10,
+   paddingBottom:10,
+     width: 365,
+    height: 200,
+    backgroundColor: 'white',
+    borderRadius:10,
+    flex: 1, 
+    justifyContent:"center",
+    alignItems:"center",
+    shadowColor: '#072146',
+    shadowOffset:{
+        width: 0,
+        height: 6,
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 1.5,
  },
  purplebox: {
     width: 100,
