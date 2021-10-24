@@ -16,11 +16,13 @@ import {
 const deviceWidth = Dimensions.get("window").width;
 
 const keys = ["Netflix", "Spotify", "Xbox Game Pass", "Izzi"];
+const precios = ["196", "115", "229", "520"];
 const urls = [
   "https://www.pngall.com/wp-content/uploads/4/Round-Netflix-Logo.png",
   "https://www.pngrepo.com/png/125477/512/spotify.png",
   "https://www.freepnglogos.com/uploads/xbox-png-gamepad-16.png",
   "https://cdn.fing.io/images/isp/MX/logo/izzi_logo.png",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Eo_circle_blue_arrow-left.svg/2048px-Eo_circle_blue_arrow-left.svg.png"
 ];
 //let cont = 0;
 
@@ -33,33 +35,39 @@ class Servicios extends React.Component {
       iconR: urls[1],
       cuenta: "carlospano@gmail.com",
       servicio: keys[0],
+      precio: precios[0],
       cont: 1,
+      contN: 0
     };
   }
 
   Load_DataR = () => {
     this.setState({
       servicio: keys[this.state.cont],
+      precio: precios[this.state.cont],
       iconC: urls[this.state.cont],
       iconL: urls[this.state.cont - 1],
       iconR: urls[this.state.cont + 1],
       cont: this.state.cont < 3 ? this.state.cont + 1 : 0,
+      contN: this.state.cont - 1
     });
   };
 
   Load_DataL = () => {
     this.setState({
-      servicio: keys[this.state.cont],
-      iconC: urls[this.state.cont],
-      iconL: urls[this.state.cont - 1],
-      iconR: urls[this.state.cont + 1],
-      cont: this.state.cont > 0 ? this.state.cont - 1 : 2,
+      servicio: keys[this.state.contN],
+      precio: precios[this.state.cont],
+      iconC: urls[this.state.contN],
+      iconL: urls[this.state.contN - 1],
+      iconR: urls[this.state.contN + 1],
+      contN: this.state.contN > 0 ? this.state.contN - 1 : 2,
+      cont: this.state.contN + 1
     });
   };
 
   render() {
     // const { labelWidth, selectedSlice } = this.state;
-    const { iconS, cuenta, servicio, cont } = this.state;
+    const { iconS, cuenta, servicio, cont, precio } = this.state;
 
     return (
       <View
@@ -77,13 +85,15 @@ class Servicios extends React.Component {
             justifyContent: "center",
           }}
         >
-          <Image
-            source={{ uri: this.state.iconL }}
-            style={{
-              width: deviceWidth / 8,
-              height: deviceWidth / 8,
-            }}
-          />
+          <TouchableOpacity onPress={this.Load_DataL}>
+            <Image
+              source={{ uri: this.state.iconL }}
+              style={{
+                width: deviceWidth / 8,
+                height: deviceWidth / 8,
+              }}
+            />
+          </TouchableOpacity>
 
           <Image
             //data={data}
@@ -169,7 +179,7 @@ class Servicios extends React.Component {
               paddingTop: 5,
             }}
           >
-            $150.00
+            {`$${precio}.00`}
           </Text>
         </View>
       </View>

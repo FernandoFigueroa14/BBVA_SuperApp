@@ -652,7 +652,8 @@ const styles = StyleSheet.create({
 marca:{
     flex:1,
     flexDirection:"row",
-    alignItems:"center"
+    alignItems:"center",
+    
 
     
 
@@ -666,7 +667,8 @@ tiraBlanca:{
     width: 350,
     height: 100,
     borderRadius:10,
-    marginBottom:20
+    marginBottom:20,
+   
 
 },
   container: {

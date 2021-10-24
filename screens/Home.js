@@ -11,6 +11,7 @@ import {
   FlatList,
   Button,
   Dimensions,
+  Linking,
 } from "react-native";
 
 const deviceWidth = Dimensions.get("window").width;
@@ -76,7 +77,7 @@ const Home = ({ navigation }) => {
             </TouchableOpacity>
 
             <View style={{ flex: 1, alignItems: "flex-start" }}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=> Linking.openURL("https://bitso.com")}>
                 <Image
                   style={{
                     width: 250,
@@ -89,7 +90,7 @@ const Home = ({ navigation }) => {
                   source={require("../Front_Design/Tarjetas/Asset23.png")}
                 />
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>Linking.openURL("https://plus.gbm.com")}>
                 <Image
                   style={{
                     width: 250,
@@ -103,7 +104,7 @@ const Home = ({ navigation }) => {
               </TouchableOpacity>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>Linking.openURL("https://www.liverpool.com.mx/tienda/home")}>
               <Image
                 style={{
                   width: 300,
@@ -218,7 +219,7 @@ const Home = ({ navigation }) => {
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Contactos")}>
                 <Image
                   style={{
                     width: 80,

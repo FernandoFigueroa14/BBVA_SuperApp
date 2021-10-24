@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-
+import { Camera } from 'expo-camera';
 
 const FastPay = ({navigation}) => {
+    const [hasPermission, setHasPermission] = useState(null);
+    const [type, setType] = useState(Camera.Constants.Type.back);
 
+    useEffect(() => {
+    (async () => {
+        const { status } = await Camera.requestCameraPermissionsAsync();
+        setHasPermission(status === 'granted');
+    })();
+    }, []);
+    if (hasPermission === null) {
+        return <View />;
+    }
+    if (hasPermission === false) {
+        return <Text>No access to camera</Text>;
+    }
     return (
         <View style={styles.container}>
-            <View style={styles.camara}>
-
+            <View style={styles.rowCamara}>
+            <Camera style={styles.camara} type={type}>
+                <View>
+                <TouchableOpacity
+                    onPress={() => {
+                    setType(
+                        type === Camera.Constants.Type.back
+                        ? Camera.Constants.Type.front
+                        : Camera.Constants.Type.back
+                    );
+                    }}>
+                </TouchableOpacity>
+                </View>
+            </Camera>
             </View>
             <ScrollView>
             <View style={styles.info}>
@@ -107,19 +133,20 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "center"
     },
-    camara: {
-      flex: 1,
+    rowCamara: {
       backgroundColor: "black",
       marginHorizontal: 40,
-      marginTop: 40
+      marginTop: 40,
+      height: 250
+    },
+    camara: {
+        flex: 1,
     },
     info: {
-      flex: 0.5,
       alignItems: "center",
       marginTop: 30,
     },
     tarjetas: {
-        flex: 0.7,
         marginTop:50
     },
     tabBarStyle: {

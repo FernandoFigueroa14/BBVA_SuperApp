@@ -20,6 +20,8 @@ import Login from '../screens/Login';
 import Cuenta from '../screens/Cuenta';
 import FastPayIns from '../screens/FastPayIns';
 import MandarDinero from '../screens/mandarDinero';
+import Contactos from '../screens/Contactos';
+import Confirmation from '../screens/confirmation';
 
 
 
@@ -45,6 +47,8 @@ const Navigation = () => {
                 <Stack.Screen name="Login" component={Login}></Stack.Screen>
                 <Stack.Screen name="Cuenta" component={Cuenta}></Stack.Screen>
                 <Stack.Screen name="MandarDinero" component={MandarDinero}></Stack.Screen>
+                <Stack.Screen name="Contactos" component={Contactos}></Stack.Screen>
+                <Stack.Screen name="Confirmation" component={Confirmation}></Stack.Screen>
 
 
 
