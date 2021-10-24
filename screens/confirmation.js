@@ -8,26 +8,23 @@ import {
   View,
   TouchableOpacity,
   Image,
+  FlatList,
+  Button,
   Dimensions,
 } from "react-native";
 
-import Servicios from "../graphics/servicios";
-
 const deviceWidth = Dimensions.get("window").width;
 
-const PagoServicios = ({ navigation }) => {
+const confirmation = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerProfile}>
         <View style={styles.tabProfileStyle}>
           <View style={styles.columns}>
-            <Text style={{ color: "#999999" }}>Bienvenido a la superApp</Text>
+            <Text style={{ color: "#999999" }}>Éxito</Text>
             <Text style={{ color: "#072146", fontSize: 18 }}>
-              Pago de tus
-              <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-                {" "}
-                Servicios
-              </Text>
+             Opereación{" "}
+              <Text style={{ fontWeight: "bold", fontSize: 20 }}>realizada</Text>
             </Text>
           </View>
 
@@ -42,49 +39,51 @@ const PagoServicios = ({ navigation }) => {
         </View>
       </View>
 
-      <View
-        style={{
-          flex: 2,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 25,
-            fontWeight: "bold",
-            textAlign: "center",
-            paddingTop: 25,
-            color: "#072146",
-          }}
-        >
-          PAGAR SERVICIOS
-        </Text>
-      </View>
+      
+    <SafeAreaView style={styles.container}>
 
-      <View
-        style={{
-          flex: 9,
-          marginTop: 30,
-        }}
-      >
-        <Servicios />
-      </View>
 
-      <View
-        style={{
-          flex: 5,
-          alignItems: "center",
-          marginTop: -60
-        }}
-      >
-        <TouchableOpacity
-            onPress={() => navigation.navigate("Confirmation")}
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.mrContainer}>
+        <Image
+                source={require("../Front_Design/Icons/Asset_30.png")}
+                style={{ width:55, height: 55,marginTop:55,marginBottom:-5}}
+              />
+          <Text
+            style={{
+              fontWeight: "300",
+              padding:20,
+              fontSize: 19,
+              marginBottom: 10,
+              color: "#072146",
+              alignSelf: "center",
+              textAlign:"center",
+              
+            }}
+          >
+            La operación que acabas de realizar ha sido  <Text style={{ fontWeight: "bold", fontSize: 22 }}>exitosa</Text>
+          </Text>
+
+
+
+<TouchableOpacity
+            onPress={() => navigation.navigate("Home")}
           >
             <Image
-              source={require("../Front_Design/Btns/Asset_46.png")}
-              style={{ width: 320, height: 45, marginTop:30 }}
+              source={require("../Front_Design/Icons/home(1).png")}
+              style={{ width: 45, height: 45, marginTop:30 }}
             />
           </TouchableOpacity>
-      </View>
+
+          
+
+          
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+
+
+
 
       <View style={styles.tabBarStyle}>
         <View style={styles.rows}>
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     width: 365,
-    height: 200,
+    height: 220,
     backgroundColor: "white",
     borderRadius: 10,
     flex: 1,
@@ -262,4 +261,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PagoServicios;
+export default confirmation;

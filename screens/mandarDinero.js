@@ -10,7 +10,6 @@ import {
   Image,
   FlatList,
   Button,
-  TextInput,
   Dimensions,
 } from "react-native";
 
@@ -24,8 +23,8 @@ const mandarDinero = ({ navigation }) => {
           <View style={styles.columns}>
             <Text style={{ color: "#999999" }}>Bienvenido a la superApp</Text>
             <Text style={{ color: "#072146", fontSize: 18 }}>
-              Super App lista para{" "}
-              <Text style={{ fontWeight: "bold", fontSize: 20 }}>Carlos</Text>
+              Realizar una {" "}
+              <Text style={{ fontWeight: "bold", fontSize: 20 }}>Transferencia</Text>
             </Text>
           </View>
 
@@ -39,6 +38,10 @@ const mandarDinero = ({ navigation }) => {
           </View>
         </View>
       </View>
+
+      
+    <SafeAreaView style={styles.container}>
+
 
       <ScrollView style={styles.scrollView}>
         <View style={styles.mrContainer}>
@@ -61,11 +64,82 @@ const mandarDinero = ({ navigation }) => {
             Estás a punto de realizar una transferencia a <Text style={{ fontWeight: "bold", fontSize: 22 }}>Dumas</Text>
           </Text>
 
+          <Text style={{
+           backgroundColor:'rgba(20,100,165,.15)',
+           width:320,
+           paddingTop:20,
+           paddingBottom:20,
+           borderRadius:15,
+           paddingLeft:15,
+           fontSize:15,
+           color: 'rgba(20,100,165,.8)',
+           borderRadius: 10
+           
+
+          }}>$1,100.03 mxn</Text>
+
+<TouchableOpacity
+            onPress={() => navigation.navigate("Confirmation")}
+          >
+            <Image
+              source={require("../Front_Design/Btns/Asset_46.png")}
+              style={{ width: 320, height: 45, marginTop:30 }}
+            />
+          </TouchableOpacity>
+
           
 
           
         </View>
       </ScrollView>
+    </SafeAreaView>
+
+
+
+
+      <View style={styles.tabBarStyle}>
+        <View style={styles.rows}>
+          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+            <Image
+              source={require("../Front_Design/Icons/home(1).png")}
+              style={{ width: 25, height: 25 }}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate("SaludFinanciera")}
+          >
+            <Image
+              source={require("../Front_Design/Icons/heart-attack.png")}
+              style={{ width: 25, height: 25 }}
+            />
+          </TouchableOpacity>
+
+          <View style={styles.containerfast}>
+            <TouchableOpacity onPress={() => navigation.navigate("FastPayIns")}>
+              <Image
+                source={require("../Front_Design/Icons/fastpay.png")}
+                style={{ width: 65, height: 65 }}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity onPress={() => navigation.navigate("Inversiones")}>
+            <Image
+              source={require("../Front_Design/Icons/wallet-filled-money-tool.png")}
+              style={{ width: 25, height: 25 }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("PagoServicios")}
+          >
+            <Image
+              source={require("../Front_Design/Icons/plus(1).png")}
+              style={{ width: 25, height: 25 }}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
