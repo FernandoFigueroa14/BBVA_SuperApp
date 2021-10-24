@@ -10,10 +10,10 @@ import {
   Image,
   FlatList,
   Button,
-  Dimensions
+  Dimensions,
 } from "react-native";
 
-const deviceWidth = Dimensions.get('window').width
+const deviceWidth = Dimensions.get("window").width;
 
 const Home = ({ navigation }) => {
   return (
@@ -62,7 +62,7 @@ const Home = ({ navigation }) => {
             snapToInterval={350}
             snapToAlignment={"center"}
           >
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Cuenta")}>
               <Image
                 style={{
                   width: 300,
@@ -124,7 +124,7 @@ const Home = ({ navigation }) => {
                   color: "#072146",
                   alignSelf: "flex-start",
                   marginTop: 15,
-                  margiButtom: 35,
+                  marginBottom: 35,
                 }}
               >
                 Mandar dinero rápido:
@@ -223,8 +223,8 @@ const Home = ({ navigation }) => {
                   style={{
                     width: 80,
                     height: 30,
-                    margin: 10,
-                    borderRadius: 5,
+                    
+                    borderRadius: 5
                   }}
                   source={require("../Front_Design/Btns/Asset_35.png")}
                 />
@@ -247,7 +247,7 @@ const Home = ({ navigation }) => {
             <Image
               style={{
                 width: deviceWidth - 20,
-                height: (deviceWidth-40)*2.1,
+                height: (deviceWidth - 40) * 2.1,
                 margin: 10,
                 borderRadius: 10,
               }}
@@ -401,8 +401,8 @@ const styles = StyleSheet.create({
     color: "#072146",
   },
   corolbox: {
-    width: deviceWidth-40,
-    height: (deviceWidth-40)*2.3,
+    width: deviceWidth - 40,
+    height: (deviceWidth - 40) * 2.3,
 
     flex: 1,
 
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     width: 365,
-    height: 200,
+    height: 220,
     backgroundColor: "white",
     borderRadius: 10,
     flex: 1,

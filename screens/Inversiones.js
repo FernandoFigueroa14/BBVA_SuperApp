@@ -31,8 +31,7 @@ const Home = ({navigation}) => {
       <ScrollView style={styles.scrollView}>
         <View style={styles.mrContainer}>
 
-            <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 20, color:"#072146", alignSelf:"flex-start",marginLeft:15,marginTop:15}}>TOP 8 DE MERCADOS
-</Text>
+            <Text style={{fontWeight: "bold", fontSize: 20, marginBottom: 20, color:"#072146", alignSelf:"flex-start",marginLeft:15,marginTop:15}}>Mis cuentas en pesos: </Text>
             
          
          <View style = {styles.greenbox}>
@@ -40,10 +39,12 @@ const Home = ({navigation}) => {
              <View style={{alignSelf:"flex-start", marginLeft:15}}>
              </View>
              
-             <View style={{flex:1, flexDirection: "row", justifyContent:"space-around", marginBottom:20}}>
+             <View style={{flex:1, flexDirection: "row", justifyContent:"space-around"}}>
 
              <TouchableOpacity style={{flex:1,alignItems:"center"}} >
                  <Image
+                 source={require("../Front_Design/Icons/Asset3.png")}
+                
                  style={{
                     width: 50,
                     height:50,
@@ -53,10 +54,10 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Altor.jpeg')}
+                 
                  />
-                 <Text style={styles.nombres}>GMEXICO B</Text>
-                 <Text style={{color: '#86dc5f', fontSize:11}}>$94.42</Text>
+                 <Text style={styles.nombres}>GENIUS 21</Text>
+                 <Text style={styles.nombres2}>$59.30</Text>
 
              </TouchableOpacity>
            
@@ -71,10 +72,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Fer.jpeg')}
+                    source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>AMX L</Text>
-                 <Text style={{color: '#86dc5f', fontSize:11}}>$17.44</Text>
+                 <Text style={styles.nombres}>Fernando</Text>
 
              </TouchableOpacity>
              <TouchableOpacity style={{flex:1,alignItems:"center"}}>
@@ -88,10 +88,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Neto.jpeg')}
+                    source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>GMEXICO B</Text>
-                 <Text style={{color: '#86dc5f', fontSize:11}}>$94.42</Text>
+                 <Text style={styles.nombres}>Ernesto</Text>
 
              </TouchableOpacity>
              
@@ -106,10 +105,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Alex.jpg')}
+                    source={require("../Front_Design/Icons/Asset3.png")}
                  />
-                 <Text style={styles.nombres}>GFNORTE O</Text>
-                 <Text style={{color: '#86dc5f', fontSize:11}}>$138.85</Text>
+                 <Text style={styles.nombres}>Alex</Text>
 
              </TouchableOpacity>
 
@@ -128,10 +126,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Altor.jpeg')}
+                    source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>CUERVO *</Text>
-                 <Text style={{color: 'red', fontSize:11}}>$43.29</Text>
+                 <Text style={styles.nombres}>Saúl</Text>
 
              </TouchableOpacity>
            
@@ -146,10 +143,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Fer.jpeg')}
+                    source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>GCC *</Text>
-                 <Text style={{color: 'red', fontSize:11}}>$152.99</Text>
+                 <Text style={styles.nombres}>Fernando</Text>
 
              </TouchableOpacity>
              <TouchableOpacity style={{flex:1,alignItems:"center"}}>
@@ -163,10 +159,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Neto.jpeg')}
+                    source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>BBAJIO O</Text>
-                 <Text style={{color: 'red', fontSize:11}}>$39.91</Text>
+                 <Text style={styles.nombres}>Ernesto</Text>
 
              </TouchableOpacity>
              
@@ -181,10 +176,9 @@ const Home = ({navigation}) => {
                     
                      borderRadius:100
                     }}
-                 source ={require('../Front_Design/Profile_pics/Alex.jpg')}
+                    source={require("../Front_Design/Icons/Asset4.png")}
                  />
-                 <Text style={styles.nombres}>AC *</Text>
-                 <Text style={{color: 'red', fontSize:11}}>$124.76</Text>
+                 <Text style={styles.nombres}>Alex</Text>
 
              </TouchableOpacity>
 
@@ -354,10 +348,20 @@ rows:{
 
  },
  nombres:{
-     fontSize: 12,
+     fontSize: 11,
      fontWeight: 'bold',
      color: '#072146',
- },
+ }, 
+ nombres2:{
+  fontSize: 11,
+  fontWeight: '300',
+  color: '#86dc5f',
+},
+nombres2:{
+  fontSize: 11,
+  fontWeight: '300',
+  color: '#86dc5f',
+},
  corolbox: {
     width: 365,
     height: 880,
@@ -367,10 +371,10 @@ rows:{
     alignItems:"center"
  },
  greenbox: {
-   paddingTop:20,
-   paddingBottom:20,
+   paddingTop:10,
+   paddingBottom:10,
      width: 365,
-    height: 250,
+    height: 200,
     backgroundColor: 'white',
     borderRadius:10,
     flex: 1, 

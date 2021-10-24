@@ -13,6 +13,7 @@ import FastPay from '../screens/FastPay';
 import Inversiones from '../screens/Inversiones';
 import PagoServicios from '../screens/PagoServicios';
 import { NavigationContainer } from '@react-navigation/native';
+import Cuenta from '../screens/Cuenta';
 
 
 
@@ -30,6 +31,8 @@ const Navigation = () => {
                 <Stack.Screen name="FastPay" component={FastPay}></Stack.Screen>
                 <Stack.Screen name="Inversiones" component={Inversiones}></Stack.Screen>
                 <Stack.Screen name="PagoServicios" component={PagoServicios}></Stack.Screen>
+                <Stack.Screen name="Cuenta" component={Cuenta}></Stack.Screen>
+
 
             </Stack.Navigator>
         

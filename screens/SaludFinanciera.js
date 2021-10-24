@@ -41,19 +41,27 @@ const SaludFinanciera = ({ navigation }) => {
         </View>
       </View>
 
-      <View style={{ flex: 5, height: 50, top: 60 }}>
+      
+      <View style={{ flex: 3, height: 50, top: 60, marginBottom: 100 }}>
         <PieChartWithDynamicSlices />
       </View>
-      <View style={{ flex: 2 }}>
+      <View style={{ flex: 1 }}>
         <Image
           source={require("../Front_Design/Salud/Asset_53.png")}
           style={{
-            width: deviceWidth - 60,
-            height: (deviceWidth - 60) / 3,
-            marginHorizontal: 30,
+            width: deviceWidth - 80,
+            height: (deviceWidth - 80) / 3,
+            marginHorizontal: 40,
             justifyContent: "center",
+            marginBottom:100
           }}
         />
+      </View>
+
+      <View style={{flex: 4 ,flexDirection:"row",alignItems:"flex-end",justifyContent:"space-around", marginTop: 120, marginBottom:30}}>
+        <Image source={require("../Front_Design/Salud/Asset_56.png")} style={{width:100,height:130}}></Image>
+        <Image source={require("../Front_Design/Salud/Asset_55.png")} style={{width:100,height:130}}></Image>
+        <Image source={require("../Front_Design/Salud/Asset_54.png")} style={{width:100,height:130}}></Image>
       </View>
 
       <View style={styles.tabBarStyle}>
