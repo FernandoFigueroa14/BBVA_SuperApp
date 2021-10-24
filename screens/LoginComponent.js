@@ -5,25 +5,41 @@ import { StyleSheet, Text, SafeAreaView, ScrollView, StatusBar, View, SectionLis
 import { NavigationContainer } from '@react-navigation/native';
 import { ImageBackground, TouchableOpacity, Image, TextInput } from 'react-native'
 
-const getMoviesFromApiAsync = async () => {
+const getUser = async () => {
   try {
     const response = await fetch(
-      'https://reactnative.dev/movies.json'
+      'localhost:8080/usuarios/usuario/1'
     );
-    const json = await response.json();
-    return json.movies;
+    const usuario = await response.json();
+    return usuario.data;
   } catch (error) {
-    console.error(error);
+    return {
+      "id": 1,
+      "nombres": "Saul",
+      "apellidos": "Toral",
+      "correo": "saulToral@hotmail.com",
+      "contraseña": "superApp2021",
+      "cuenta": 1234567890
+    }
   }
 };
 
+console.log(getUser());
 
 const LoginComponent = ({navigation}) => {
 
   const [session, setSession] = useState(0);
   const [text, onChangeText] = React.useState("XXXX-XXXX-XXXX-3297");
     const [text1, onChangeTextT] = React.useState("");
-    const nombre = "Saul"
+    const usuario = {
+      "id": 1,
+      "nombres": "Saul",
+      "apellidos": "Toral",
+      "correo": "saulToral@hotmail.com",
+      "contraseña": "superApp2021",
+      "cuenta": 1234567890
+    }
+    const nombre = usuario.nombres
 
   return(
     <SafeAreaView style={styles.container}>
@@ -63,7 +79,12 @@ const LoginComponent = ({navigation}) => {
                     />
             </View>
             <View style={styles.next}>
-            <TouchableOpacity onPress={()=> navigation.navigate("Home",{screen:'Home'})}>
+            <TouchableOpacity onPress={()=>{if(text1 == usuario.contraseña){
+                navigation.navigate("Home",{screen:'Home'})
+            }else{
+              <Text style={{color: 'red'}}>Contraseña incorrecta</Text>
+            } 
+            }}>
                 <Image source={require('../Front_Design/Images/next.png')} style={{width:55,
                         height:55}}/>
                 </TouchableOpacity>
