@@ -1,38 +1,41 @@
-import React from 'react';
-import {
-  Text,
-  View,
-  Dimensions
-} from 'react-native';
+import React from 'react'
+import { Text, View, Dimensions, Image } from 'react-native'
 import { PieChart } from 'react-native-svg-charts'
 
- class PieChartWithDynamicSlices extends React.PureComponent {
-
+class PieChartWithDynamicSlices extends React.PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       selectedSlice: {
-        label: '',
-        value: 0
+        icon: null,
+        label: 'Tu salud financiera es',
+        salud: 'NIVELADA',
       },
-      labelWidth: 0
+      labelWidth: 0,
     }
   }
+
   render() {
-    const { labelWidth, selectedSlice } = this.state;
-    const { label, value } = selectedSlice;
-    const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter'];
-    const values = [15, 25, 35, 45, 55];
-    const colors = ['#600080', '#9900cc', '#c61aff', '#d966ff', '#ecb3ff']
+    const { labelWidth, selectedSlice } = this.state
+    const { icon, label, salud } = selectedSlice
+    const keys = ['google', 'facebook', 'linkedin', 'youtube', 'Twitter']
+    const values = [15, 25, 35, 45, 55]
+    const colors = ['#072146', '#1464A5', '#2bcccb', '#ffca2d', '#008484']
     const data = keys.map((key, index) => {
-        return {
-          key,
-          value: values[index],
-          svg: { fill: colors[index] },
-          arc: { outerRadius: (70 + values[index]) + '%', padAngle: label === key ? 0.1 : 0 },
-          onPress: () => this.setState({ selectedSlice: { label: key, value: values[index] } })
-        }
-      })
+      return {
+        key,
+        value: values[index],
+        svg: { fill: colors[index] },
+        arc: {
+          outerRadius: 70 + values[index] + '%',
+          padAngle: label === key ? 0.1 : 0,
+        },
+        onPress: () =>
+          this.setState({
+            selectedSlice: { label: key, value: values[index] },
+          }),
+      }
+    })
     const deviceWidth = Dimensions.get('window').width
 
     return (
@@ -40,23 +43,44 @@ import { PieChart } from 'react-native-svg-charts'
         <PieChart
           style={{ height: 200 }}
           outerRadius={'80%'}
-          innerRadius={'45%'}
+          innerRadius={'50%'}
           data={data}
         />
-        <Text
-          onLayout={({ nativeEvent: { layout: { width } } }) => {
-            this.setState({ labelWidth: width });
-          }}
+
+        <Image
+          source={require('../Front_Design/Icons/Asset_34.png')}
           style={{
             position: 'absolute',
+            left: deviceWidth / 2 - 20 / 2,
+            alignItems: 'center',
+            width: 20,
+            height: 20,
+            top: 150
+          }}
+        />
+
+        <Text
+          onLayout={({
+            nativeEvent: {
+              layout: { width },
+            },
+          }) => {
+            this.setState({ labelWidth: width })
+          }}
+          style={{
+            flex: 1,
+            position: 'absolute',
             left: deviceWidth / 2 - labelWidth / 2,
-            textAlign: 'center'
+            textAlign: 'center',
+            fontWeight: 'bold',
+            fontSize: 8,
+            paddingTop: 30
           }}>
-          {`${label} \n ${value}`}
+          {`${label} \n ${salud}`}
         </Text>
       </View>
     )
   }
 }
 
-export default PieChartWithDynamicSlices;
+export default PieChartWithDynamicSlices
